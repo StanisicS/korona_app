@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _markers.clear();
 
-      for (final ambulante in covidAmbulante.) {
+      for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
           markerId: MarkerId(ambulante.gradOpTina),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),

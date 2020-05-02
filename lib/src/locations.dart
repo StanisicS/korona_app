@@ -84,7 +84,7 @@ class Ambulante {
       _$AmbulanteFromJson(json);
   Map<String, dynamic> toJson() => _$AmbulanteToJson(this);
 
-  final List<Ambulante> ambulante;
+  final List<Locations> ambulante;
 }
 
 // Map locationsMap = jsonDecode(jsonString);
