@@ -1,5 +1,6 @@
 {
-  "ambulante": [{
+  "ambulante": [
+    {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ADA",
       "Grad/opština": "ADA",
       "Adresa": "JOŽEFA ATILE",
@@ -532,8 +533,6 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 7,
       "Radni_dan_radno_vreme_do": 15,
-      "Vikend_radno_vreme_od": "",
-      "Vikend_radno_vreme_do": "",
       "Prilaz_za_invalide": "DA"
     },
     {
@@ -1272,8 +1271,6 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 0,
       "Radni_dan_radno_vreme_do": 24,
-      "Vikend_radno_vreme_od": "",
-      "Vikend_radno_vreme_do": "",
       "Prilaz_za_invalide": "DA"
     },
     {
@@ -1894,8 +1891,6 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 7,
       "Radni_dan_radno_vreme_do": 15,
-      "Vikend_radno_vreme_od": "",
-      "Vikend_radno_vreme_do": "",
       "Prilaz_za_invalide": "DA"
     },
     {
