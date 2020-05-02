@@ -91,13 +91,13 @@ class Ambulante {
 // var location = Locations.fromJson(locationsMap);
 // String json = jsonEncode(location);
 
-Future<Locations> getCovidAmbulante() async {
+Future<Ambulante> getCovidAmbulante() async {
   const covidAmbulanteURL =
       'https://raw.githubusercontent.com/StanisicS/google_maps_int/master/lib/src/covid-19-ambulante.json';
   // Retrieve the locations of Google offices
   final response = await http.get(covidAmbulanteURL);
   if (response.statusCode == 200) {
-    return Locations.fromJson(json.decode(response.body));
+    return Ambulante.fromJson(json.decode(response.body));
   } else {
     throw HttpException(
         'Unexpected status code ${response.statusCode}:'

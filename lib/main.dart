@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
+import 'package:permission_handler/permission_handler.dart';
 
 void main() => runApp(MyApp());
 
@@ -63,13 +64,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Google Office Locations'),
+            title: const Text('COVID-19 Ambulante u Srbiji'),
             backgroundColor: Colors.green[700],
           ),
           body: GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: const LatLng(0, 0),
+              target: const LatLng(44.787197, 20.457273),
               zoom: 2,
             ),
             markers: _markers.values.toSet(),
