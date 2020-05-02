@@ -41,3 +41,16 @@ Map<String, dynamic> _$LocationsToJson(Locations instance) => <String, dynamic>{
       'vikendRadnoVremeDo': instance.vikendRadnoVremeDo,
       'prilazZaInvalide': instance.prilazZaInvalide,
     };
+
+Ambulante _$AmbulanteFromJson(Map<String, dynamic> json) {
+  return Ambulante(
+    ambulante: (json['ambulante'] as List)
+        ?.map((e) =>
+            e == null ? null : Ambulante.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
+}
+
+Map<String, dynamic> _$AmbulanteToJson(Ambulante instance) => <String, dynamic>{
+      'ambulante': instance.ambulante,
+    };
