@@ -45,16 +45,16 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _markers.clear();
 
-      for (var i = 0; i < .length; i++) {
+      for (final ambulante in covidAmbulante.) {
         final marker = Marker(
-          markerId: MarkerId(covidAmbulante.gradOpTina),
-          position: LatLng(covidAmbulante.geoLatitude, covidAmbulante.geoLongitude),
+          markerId: MarkerId(ambulante.gradOpTina),
+          position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
           infoWindow: InfoWindow(
-            title: covidAmbulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
-            snippet: covidAmbulante.adresa,
+            title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
+            snippet: '${ambulante.adresa} + ${ambulante.brojZgrade}',
           ),
         );
-        _markers[covidAmbulante.name] = marker;
+        _markers[ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi] = marker;
       }
     });
   }
