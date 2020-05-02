@@ -6,8 +6,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'locations.g.dart';
 
 @JsonSerializable()
-class Locations {
-  Locations(
+class Ambulante {
+  Ambulante(
       {this.cOVIDAmbulantaPriZdravstvenojUstanovi,
       this.gradOpTina,
       this.adresa,
@@ -22,9 +22,9 @@ class Locations {
       this.vikendRadnoVremeDo,
       this.prilazZaInvalide});
 
-  factory Locations.fromJson(Map<String, dynamic> json) =>
-      _$LocationsFromJson(json);
-  Map<String, dynamic> toJson() => _$LocationsToJson(this);
+  factory Ambulante.fromJson(Map<String, dynamic> json) =>
+      _$AmbulanteFromJson(json);
+  Map<String, dynamic> toJson() => _$AmbulanteToJson(this);
 
   final String cOVIDAmbulantaPriZdravstvenojUstanovi;
   final String gradOpTina;
@@ -75,29 +75,29 @@ class Locations {
 }
 
 @JsonSerializable()
-class Ambulante {
-  Ambulante({
+class Locations {
+  Locations({
     this.ambulante,
   });
 
-  factory Ambulante.fromJson(Map<String, dynamic> json) =>
-      _$AmbulanteFromJson(json);
-  Map<String, dynamic> toJson() => _$AmbulanteToJson(this);
+  factory Locations.fromJson(Map<String, dynamic> json) =>
+      _$LocationsFromJson(json);
+  Map<String, dynamic> toJson() => _$LocationsToJson(this);
 
-  final List<Locations> ambulante;
+  final List<Ambulante> ambulante;
 }
 
 // Map locationsMap = jsonDecode(jsonString);
 // var location = Locations.fromJson(locationsMap);
 // String json = jsonEncode(location);
 
-Future<Ambulante> getCovidAmbulante() async {
+Future<Locations> getCovidAmbulante() async {
   const covidAmbulanteURL =
       'https://raw.githubusercontent.com/StanisicS/google_maps_int/master/lib/src/covid-19-ambulante.json';
   // Retrieve the locations of Google offices
   final response = await http.get(covidAmbulanteURL);
   if (response.statusCode == 200) {
-    return Ambulante.fromJson(json.decode(response.body));
+    return Locations.fromJson(json.decode(response.body));
   } else {
     throw HttpException(
         'Unexpected status code ${response.statusCode}:'

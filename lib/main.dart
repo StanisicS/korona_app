@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
-import 'package:permission_handler/permission_handler.dart';
+import 'package:geolocator/geolocator.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,19 +40,23 @@ class MyApp extends StatefulWidget {
 // }
 
 class _MyAppState extends State<MyApp> {
+  // var _position;
+
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
+    await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
     final covidAmbulante = await locations.getCovidAmbulante();
     setState(() {
       _markers.clear();
 
       for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
-          markerId: MarkerId(ambulante.gradOpTina),
+          markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
           infoWindow: InfoWindow(
             title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
-            snippet: '${ambulante.adresa} + ${ambulante.brojZgrade}',
+            snippet: ambulante.adresa,
           ),
         );
         _markers[ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi] = marker;
@@ -70,7 +74,7 @@ class _MyAppState extends State<MyApp> {
           body: GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: const LatLng(44.787197, 20.457273),
+              target: const LatLng(0, 0),
               zoom: 2,
             ),
             markers: _markers.values.toSet(),
@@ -78,3 +82,5 @@ class _MyAppState extends State<MyApp> {
         ),
       );
 }
+
+// target: const LatLng(44.787197, 20.457273),
