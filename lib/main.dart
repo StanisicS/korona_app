@@ -43,29 +43,38 @@ class _MyAppState extends State<MyApp> {
   // var _position;
   BitmapDescriptor pinLocationIcon;
 
-  @override
-  void initState() {
-    super.initState();
-    setCustomMapPin();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   setCustomMapPin();
+  // }
 
-  void setCustomMapPin() async {
-    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
-  }
+  // void setCustomMapPin() async {
+  //   pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+  //       ImageConfiguration(
+  //         devicePixelRatio: 2.5,
+  //       ),
+  //       'assets/ambulance-pin.png');
+  // }
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+    final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
+    await controller.setMapStyle(Utils.mapStyles);
+
     setState(() {
       _markers.clear();
+      // _markers.addAll(Marker(icon: pinLocationIcon));
 
       for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
           markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
+          icon: pinLocationIcon,
           infoWindow: InfoWindow(
             title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
             snippet: ambulante.adresa,
@@ -95,4 +104,165 @@ class _MyAppState extends State<MyApp> {
       );
 }
 
-// target: const LatLng(44.787197, 20.457273),
+class Utils {
+  static String mapStyles = '''[
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+]''';
+}
