@@ -41,6 +41,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // var _position;
+  BitmapDescriptor pinLocationIcon;
+
+  @override
+  void initState() {
+    super.initState();
+    setCustomMapPin();
+  }
+
+  void setCustomMapPin() async {
+    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
+  }
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
@@ -75,7 +87,7 @@ class _MyAppState extends State<MyApp> {
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
               target: const LatLng(44.787197, 20.457273),
-              zoom: 4,
+              zoom: 7,
             ),
             markers: _markers.values.toSet(),
           ),
