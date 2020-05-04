@@ -43,38 +43,29 @@ class _MyAppState extends State<MyApp> {
   // var _position;
   BitmapDescriptor pinLocationIcon;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   setCustomMapPin();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    setCustomMapPin();
+  }
 
-  // void setCustomMapPin() async {
-  //   pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-  //       ImageConfiguration(
-  //         devicePixelRatio: 2.5,
-  //       ),
-  //       'assets/ambulance-pin.png');
-  // }
+  void setCustomMapPin() async {
+    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
+  }
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
-    final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
-    await controller.setMapStyle(Utils.mapStyles);
-
     setState(() {
       _markers.clear();
-      // _markers.addAll(Marker(icon: pinLocationIcon));
 
       for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
           markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
-          icon: pinLocationIcon,
           infoWindow: InfoWindow(
             title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
             snippet: ambulante.adresa,
@@ -104,6 +95,7 @@ class _MyAppState extends State<MyApp> {
       );
 }
 
+<<<<<<< HEAD
 class Utils {
   static String mapStyles = '''[
   {
@@ -311,3 +303,6 @@ class Utils {
   }
 ]''';
 }
+=======
+// target: const LatLng(44.787197, 20.457273),
+>>>>>>> parent of f4488ba... pin
