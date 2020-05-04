@@ -97,6 +97,7 @@ class _MyAppState extends State<MyApp> {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Utils {
   static String mapStyles = '''[
   {
@@ -304,6 +305,9 @@ class Utils {
   }
 ]''';
 }
+=======
+// target: const LatLng(44.787197, 20.457273),
+>>>>>>> parent of f4488ba... pin
 =======
 // target: const LatLng(44.787197, 20.457273),
 >>>>>>> parent of f4488ba... pin
