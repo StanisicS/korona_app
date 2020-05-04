@@ -43,29 +43,38 @@ class _MyAppState extends State<MyApp> {
   // var _position;
   BitmapDescriptor pinLocationIcon;
 
-  @override
-  void initState() {
-    super.initState();
-    setCustomMapPin();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   setCustomMapPin();
+  // }
 
-  void setCustomMapPin() async {
-    pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
-  }
+  // void setCustomMapPin() async {
+  //   pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+  //       ImageConfiguration(
+  //         devicePixelRatio: 2.5,
+  //       ),
+  //       'assets/ambulance-pin.png');
+  // }
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     await Geolocator()
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+    final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
+    await controller.setMapStyle(Utils.mapStyles);
+
     setState(() {
       _markers.clear();
+      // _markers.addAll(Marker(icon: pinLocationIcon));
 
       for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
           markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
+          icon: pinLocationIcon,
           infoWindow: InfoWindow(
             title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
             snippet: ambulante.adresa,
@@ -95,16 +104,13 @@ class _MyAppState extends State<MyApp> {
       );
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 class Utils {
   static String mapStyles = '''[
   {
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#242f3e"
+        "color": "#1d2c4d"
       }
     ]
   },
@@ -112,7 +118,7 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#746855"
+        "color": "#8ec3b9"
       }
     ]
   },
@@ -120,34 +126,61 @@ class Utils {
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#242f3e"
+        "color": "#1a3646"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#4b6878"
       }
     ]
   },
   {
     "featureType": "administrative.land_parcel",
-    "elementType": "labels",
+    "elementType": "labels.text.fill",
     "stylers": [
       {
-        "visibility": "off"
+        "color": "#64779e"
       }
     ]
   },
   {
-    "featureType": "administrative.locality",
-    "elementType": "labels.text.fill",
+    "featureType": "administrative.province",
+    "elementType": "geometry.stroke",
     "stylers": [
       {
-        "color": "#d59563"
+        "color": "#4b6878"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#334e87"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#023e58"
       }
     ]
   },
   {
     "featureType": "poi",
-    "elementType": "labels.text",
+    "elementType": "geometry",
     "stylers": [
       {
-        "visibility": "off"
+        "color": "#283d6a"
       }
     ]
   },
@@ -156,33 +189,25 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#d59563"
+        "color": "#6f9ba5"
       }
     ]
   },
   {
-    "featureType": "poi.business",
+    "featureType": "poi",
+    "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#263c3f"
+        "color": "#1d2c4d"
       }
     ]
   },
   {
     "featureType": "poi.park",
-    "elementType": "labels.text",
+    "elementType": "geometry.fill",
     "stylers": [
       {
-        "visibility": "off"
+        "color": "#023e58"
       }
     ]
   },
@@ -191,7 +216,7 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#6b9a76"
+        "color": "#3C7680"
       }
     ]
   },
@@ -200,16 +225,7 @@ class Utils {
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#38414e"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#212a37"
+        "color": "#304a7d"
       }
     ]
   },
@@ -218,7 +234,16 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#9ca5b3"
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
       }
     ]
   },
@@ -227,7 +252,7 @@ class Utils {
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#746855"
+        "color": "#2c6675"
       }
     ]
   },
@@ -236,7 +261,7 @@ class Utils {
     "elementType": "geometry.stroke",
     "stylers": [
       {
-        "color": "#1f2835"
+        "color": "#255763"
       }
     ]
   },
@@ -245,34 +270,52 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#f3d19c"
+        "color": "#b0d5ce"
       }
     ]
   },
   {
-    "featureType": "road.local",
-    "elementType": "labels",
+    "featureType": "road.highway",
+    "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "visibility": "off"
+        "color": "#023e58"
       }
     ]
   },
   {
     "featureType": "transit",
-    "elementType": "geometry",
+    "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#2f3948"
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#283d6a"
       }
     ]
   },
   {
     "featureType": "transit.station",
-    "elementType": "labels.text.fill",
+    "elementType": "geometry",
     "stylers": [
       {
-        "color": "#d59563"
+        "color": "#3a4762"
       }
     ]
   },
@@ -281,7 +324,7 @@ class Utils {
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#17263c"
+        "color": "#0e1626"
       }
     ]
   },
@@ -290,27 +333,9 @@ class Utils {
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#515c6d"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#17263c"
+        "color": "#4e6d70"
       }
     ]
   }
 ]''';
 }
-=======
-// target: const LatLng(44.787197, 20.457273),
->>>>>>> parent of f4488ba... pin
-=======
-// target: const LatLng(44.787197, 20.457273),
->>>>>>> parent of f4488ba... pin
-=======
-// target: const LatLng(44.787197, 20.457273),
->>>>>>> parent of f4488ba... pin
