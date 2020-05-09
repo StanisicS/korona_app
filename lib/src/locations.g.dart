@@ -21,7 +21,7 @@ Ambulante _$AmbulanteFromJson(Map<String, dynamic> json) {
     radniDanRadnoVremeDo: json['Radni_dan_radno_vreme_do'] as int,
     vikendRadnoVremeOd: json['Vikend_radno_vreme_od'] as int,
     vikendRadnoVremeDo: json['Vikend_radno_vreme_do'] as int,
-    prilazZaInvalide: json['Prilaz_za_invalide'] as String,
+    prilazZaInvalide: json['Prilaz_za_invalide'] as bool,
   );
 }
 

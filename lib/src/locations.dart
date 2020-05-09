@@ -38,7 +38,7 @@ class Ambulante {
   final int radniDanRadnoVremeDo;
   final int vikendRadnoVremeOd;
   final int vikendRadnoVremeDo;
-  final String prilazZaInvalide;
+  final bool prilazZaInvalide;
 
   // : cOVIDAmbulantaPriZdravstvenojUstanovi =
   //       json['COVID_ambulanta_pri_zdravstvenoj_ustanovi'],

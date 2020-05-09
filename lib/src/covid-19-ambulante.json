@@ -13,7 +13,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ALIBUNAR",
@@ -28,7 +28,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA APATIN",
@@ -43,7 +43,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ARILJE",
@@ -58,7 +58,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BABUŠNICA",
@@ -73,7 +73,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BAČ RESPIRATORNI CENTAR",
@@ -88,7 +88,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BAČKA PALANKA",
@@ -103,7 +103,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BAČKA TOPOLA",
@@ -118,7 +118,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BAČKI PETROVAC RESPIRATORNI CENTAR",
@@ -133,7 +133,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BAJINA BAŠTA",
@@ -148,7 +148,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BEČEJ",
@@ -163,7 +163,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BELA CRKVA",
@@ -177,7 +177,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BELA PALANKA",
@@ -192,7 +192,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BEOČIN",
@@ -206,7 +206,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BARAJEVO",
@@ -221,7 +221,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VOZDOVAC",
@@ -236,7 +236,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VRAČAR",
@@ -251,7 +251,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA GROCKA",
@@ -265,7 +265,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ZVEZDARA - AMBULANTA SEVERNI BULEVAR",
@@ -280,7 +280,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ZEMUN",
@@ -295,7 +295,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ZEMUN - ZDRAVSTVENA STANICA SURČIN",
@@ -310,7 +310,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA LAZAREVAC",
@@ -325,7 +325,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA MLADENOVAC",
@@ -340,7 +340,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 18,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI BEOGRAD",
@@ -355,7 +355,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA OBRENOVAC",
@@ -370,7 +370,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PALILULA - STARA PALILULA",
@@ -385,7 +385,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PALILULA - KARABURMA",
@@ -400,7 +400,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 18,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PALILULA - BORČA I",
@@ -415,7 +415,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 18,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA RAKOVICA",
@@ -430,7 +430,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SAVSKI VENAC",
@@ -445,7 +445,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SOPOT",
@@ -460,7 +460,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA STARI GRAD",
@@ -475,7 +475,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ČUKARICA",
@@ -490,7 +490,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BOGATIĆ",
@@ -505,7 +505,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BOLJEVAC",
@@ -520,7 +520,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BOR",
@@ -533,7 +533,7 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 7,
       "Radni_dan_radno_vreme_do": 15,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "BOR AMBULANTA RUDAR",
@@ -548,7 +548,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BOSILEGRAD",
@@ -563,7 +563,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BUJANOVAC",
@@ -578,7 +578,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ČAČAK",
@@ -593,7 +593,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ČAČAK",
@@ -608,7 +608,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ČAJETINA",
@@ -623,7 +623,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ČOKA",
@@ -638,7 +638,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ĆUPRIJA",
@@ -652,7 +652,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA ĆUPRIJA",
@@ -667,7 +667,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DESPOTOVAC",
@@ -682,7 +682,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DIMITROVGRAD",
@@ -697,7 +697,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DONJA GUŠTERICA",
@@ -711,7 +711,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA GORNJI MILANOVAC",
@@ -726,7 +726,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "KBC PRIŠTINA",
@@ -740,7 +740,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA LUČANI ZDRAVSTVENA STANICA GUČA",
@@ -754,7 +754,7 @@
       "Radni_dan_radno_vreme_do": 19,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 19,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR MILORAD - MIKA PAVLOVIĆ INĐIJA",
@@ -769,7 +769,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA IRIG",
@@ -784,7 +784,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA IVANJICA",
@@ -799,7 +799,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA JAGODINA",
@@ -813,7 +813,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KANJIŽA",
@@ -828,7 +828,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KANJIŽA",
@@ -843,7 +843,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KIKINDA",
@@ -858,7 +858,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA KIKINDA",
@@ -873,7 +873,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KIKINDA",
@@ -888,7 +888,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR KLADOVO",
@@ -903,7 +903,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR KNJAŽEVAC",
@@ -918,7 +918,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOCELJEVA",
@@ -933,7 +933,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOSJERIĆ",
@@ -948,7 +948,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOSOVSKA MITROVICA",
@@ -962,7 +962,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZAVOD ZA JAVNO ZDRAVLJE PRIŠTINA – KOSOVSKA MITROVICA",
@@ -976,7 +976,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOVAČICA",
@@ -991,7 +991,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOVIN",
@@ -1006,7 +1006,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KRALJEVO",
@@ -1021,7 +1021,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KRUPANJ",
@@ -1036,7 +1036,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -1050,7 +1050,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA LEPOSAVIĆ",
@@ -1064,7 +1064,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA LJUBOVIJE",
@@ -1079,7 +1079,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR \"MILENKO MARIN\" LOZNICA",
@@ -1094,7 +1094,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA LUČANI ZDRAVENA STANICA LUČANI",
@@ -1108,7 +1108,7 @@
       "Radni_dan_radno_vreme_do": 19,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 19,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR VEROLJUB CAKIĆ",
@@ -1123,7 +1123,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA MALI IĐOŠ",
@@ -1138,7 +1138,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA MALI ZVORNIK",
@@ -1153,7 +1153,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -1168,7 +1168,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR NEGOTIN",
@@ -1183,7 +1183,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SRPSKA CRNJA",
@@ -1198,7 +1198,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVA VAROŠ",
@@ -1213,7 +1213,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI BEČEJ",
@@ -1228,7 +1228,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI KNEŽEVAC",
@@ -1243,7 +1243,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI PAZAR",
@@ -1258,7 +1258,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI SAD RESPIRATORNI CENTAR NOVO NASELJE - ZA ODRASLE",
@@ -1271,7 +1271,7 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 0,
       "Radni_dan_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI SAD RESPIRATORNI CENTAR NOVO NASELJE - ZA DECU",
@@ -1286,7 +1286,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI SAD RESPIRATORNI CENTAR JOVAN JOVANOVIĆ ZMAJ - ZA TRUDNICE",
@@ -1301,7 +1301,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 15,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA NOVI SAD RESPIRATORNI CENTAR JOVAN JOVANOVIĆ ZMAJ - ZA ODRASLE",
@@ -1316,7 +1316,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA OPOVO",
@@ -1331,7 +1331,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -1346,7 +1346,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PANČEVO",
@@ -1361,7 +1361,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PARAĆIN",
@@ -1376,7 +1376,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR GNJILANE",
@@ -1390,7 +1390,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR DRAGAN FUNDUK PEĆINCI",
@@ -1405,7 +1405,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA",
@@ -1420,7 +1420,7 @@
       "Radni_dan_radno_vreme_do": 19,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 19,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PIROT - AMBULANTA TIJABARA",
@@ -1435,7 +1435,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PLANDIŠTE",
@@ -1450,7 +1450,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA POŽEGA",
@@ -1465,7 +1465,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PREŠEVO",
@@ -1480,7 +1480,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PRIBOJ",
@@ -1495,7 +1495,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PRIJEPOLJE",
@@ -1510,7 +1510,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA RAŠKA",
@@ -1525,7 +1525,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA REKOVAC",
@@ -1540,7 +1540,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA RUMA",
@@ -1554,7 +1554,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA \"DR DRAGA LJOČIĆ\" ŠABAC",
@@ -1569,7 +1569,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SEČANJ",
@@ -1583,7 +1583,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SENTA",
@@ -1598,7 +1598,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ŠID",
@@ -1613,7 +1613,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SJENICA",
@@ -1628,7 +1628,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SRBOBRAN",
@@ -1643,7 +1643,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SREMSKA MITROVICA",
@@ -1657,7 +1657,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR JOVAN JOVANOVIĆ ZMAJ",
@@ -1672,7 +1672,7 @@
       "Radni_dan_radno_vreme_do": 19,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 19,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ŠTRPCE",
@@ -1686,7 +1686,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SUBOTICA",
@@ -1701,7 +1701,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA SUBOTICA",
@@ -1716,7 +1716,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR SURDULICA",
@@ -1731,7 +1731,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SVILAJNAC",
@@ -1746,7 +1746,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA TEMERIN",
@@ -1761,7 +1761,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA TITEL",
@@ -1776,7 +1776,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA TRGOVIŠTE",
@@ -1791,7 +1791,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA TUTIN",
@@ -1806,7 +1806,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -1821,7 +1821,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA KOSOVO POLJE",
@@ -1835,7 +1835,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA UŽICE",
@@ -1849,7 +1849,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA",
@@ -1863,7 +1863,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -1878,7 +1878,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZAVOD ZA JAVNO ZDRAVLJE",
@@ -1891,7 +1891,7 @@
       "Mobilni_telefon": "",
       "Radni_dan_radno_vreme_od": 7,
       "Radni_dan_radno_vreme_do": 15,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VLADIČIN HAN",
@@ -1906,7 +1906,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VLADIMIRCI",
@@ -1921,7 +1921,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR VRANJE",
@@ -1936,7 +1936,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VRBAS",
@@ -1951,7 +1951,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VRNJAČKA BANJA",
@@ -1966,7 +1966,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA VRŠAC",
@@ -1980,7 +1980,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ŽABALJ",
@@ -1995,7 +1995,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 18,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENI CENTAR ZAJEČAR",
@@ -2009,7 +2009,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ŽITIŠTE",
@@ -2024,7 +2024,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR. BOSKO VREBALOV ZRENJANIN",
@@ -2039,7 +2039,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ZUBIN POTOK",
@@ -2054,7 +2054,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ZVEČAN",
@@ -2068,7 +2068,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA GADŽIN HAN",
@@ -2083,7 +2083,7 @@
       "Radni_dan_radno_vreme_do": 18,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 18,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZDRAVSTVENA STANICA DONJI DUŠNIK",
@@ -2097,7 +2097,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA MEROŠINA",
@@ -2111,7 +2111,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DOLJEVAC",
@@ -2126,7 +2126,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA DR.LJUBINKO ĐORĐEVIĆ SVRLJIG",
@@ -2141,7 +2141,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA RAŽANJ",
@@ -2156,7 +2156,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "OPŠTA BOLNICA ALEKSINAC",
@@ -2171,7 +2171,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA PROKUPLJE",
@@ -2186,7 +2186,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA",
@@ -2201,7 +2201,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ŽITORAĐA",
@@ -2216,7 +2216,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA ALEKSINAC",
@@ -2231,7 +2231,7 @@
       "Radni_dan_radno_vreme_do": 24,
       "Vikend_radno_vreme_od": 0,
       "Vikend_radno_vreme_do": 24,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA BLACE",
@@ -2246,7 +2246,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM ZDRAVLJA SOKOBANJA",
@@ -2261,7 +2261,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "NE"
+      "Prilaz_za_invalide": false
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "DOM DRAVLJA NIŠ (CENTRALNI OBJEKAT)",
@@ -2276,7 +2276,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     },
     {
       "COVID_ambulanta_pri_zdravstvenoj_ustanovi": "ZA ČAIR (INFUZIONI CENTAR)",
@@ -2290,7 +2290,7 @@
       "Radni_dan_radno_vreme_do": 22,
       "Vikend_radno_vreme_od": 7,
       "Vikend_radno_vreme_do": 22,
-      "Prilaz_za_invalide": "DA"
+      "Prilaz_za_invalide": true
     }
   ]
 }

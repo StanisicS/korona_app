@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
 import 'package:geolocator/geolocator.dart';
+import 'package:location/location.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,63 +12,95 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-// class _MyAppState extends State<MyApp> {
-//   GoogleMapController mapController;
-
-//   final LatLng _center = const LatLng(45.521563, -122.677433);
-
-//   void _onMapCreated(GoogleMapController controller) {
-//     mapController = controller;
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: Text('Maps Sample App'),
-//           backgroundColor: Colors.green[700],
-//         ),
-//         body: GoogleMap(
-//           onMapCreated: _onMapCreated,
-//           initialCameraPosition: CameraPosition(
-//             target: _center,
-//             zoom: 11.0,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class _MyAppState extends State<MyApp> {
   // var _position;
   BitmapDescriptor pinLocationIcon;
+  Position position;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   setCustomMapPin();
-  // }
+  Location location = Location();
 
-  // void setCustomMapPin() async {
-  //   pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-  //       ImageConfiguration(
-  //         devicePixelRatio: 2.5,
-  //       ),
-  //       'assets/ambulance-pin.png');
-  // }
+  bool _serviceEnabled;
+  PermissionStatus _permissionGranted;
+  LocationData _locationData;
+
+  Future<void> getLocation() async {
+    _serviceEnabled = await location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await location.requestService();
+      if (!_serviceEnabled) {
+        return;
+      }
+    }
+
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        return;
+      }
+    }
+
+    _locationData = await location.getLocation();
+
+    var geolocator = Geolocator();
+
+    GeolocationStatus geolocationStatus =
+        await geolocator.checkGeolocationPermissionStatus();
+
+    switch (geolocationStatus) {
+      case GeolocationStatus.denied:
+        showToast('denied');
+        break;
+      case GeolocationStatus.disabled:
+        showToast('disabled');
+        break;
+      case GeolocationStatus.restricted:
+        showToast('restricted');
+        break;
+      case GeolocationStatus.unknown:
+        showToast('unknown');
+        break;
+      case GeolocationStatus.granted:
+        showToast('Access granted');
+        _getCurrentLocation();
+    }
+  }
+
+  void showToast(message) {
+    Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+
+  @override
+  void initState() {
+    getLocation();
+    super.initState();
+  }
+
+  void _getCurrentLocation() async {
+    Position res = await Geolocator().getCurrentPosition();
+    setState(() {
+      position = res;
+      // _child = _mapWidget();
+    });
+  }
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
-    await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+    // Position res = await Geolocator()
+    //     .getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
     final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
     await controller.setMapStyle(Utils.mapStyles);
 
     setState(() {
+      // position = res;
       _markers.clear();
       // _markers.addAll(Marker(icon: pinLocationIcon));
 
@@ -75,10 +109,58 @@ class _MyAppState extends State<MyApp> {
           markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
           position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
           icon: pinLocationIcon,
-          infoWindow: InfoWindow(
-            title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
-            snippet: ambulante.adresa,
-          ),
+          onTap: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (builder) {
+                  return Container(
+                    color: Colors.white,
+                    child: ListView(
+                      children: <Widget>[
+                        ListTile(
+                          leading: Icon(Icons.domain),
+                          title: Text(
+                            '${ambulante.adresa} ${ambulante.brojZgrade}, ${ambulante.gradOpTina}',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        Divider(height: 5, color: Colors.green[300]),
+                        ListTile(
+                          leading: Icon(Icons.local_phone),
+                          title: Text(
+                            '${ambulante.kontaktTelefon} ${ambulante.mobilniTelefon}',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        Divider(height: 5, color: Colors.green[300]),
+                        ListTile(
+                          leading: Icon(Icons.access_time),
+                          title: Text(
+                            '${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        Divider(height: 5, color: Colors.green[300]),
+                        ListTile(
+                            leading: Icon(Icons.accessible_forward),
+                            title: ambulante.prilazZaInvalide
+                                ? Icon(
+                                    Icons.check_circle,
+                                    color: Colors.green,
+                                  )
+                                : Icon(
+                                    Icons.block,
+                                    color: Colors.red,
+                                  )),
+                      ],
+                    ),
+                  );
+                });
+          },
+          // infoWindow: InfoWindow(
+          //   title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
+          //   snippet: ambulante.adresa,
+          // ),
         );
         _markers[ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi] = marker;
       }
@@ -95,8 +177,9 @@ class _MyAppState extends State<MyApp> {
           body: GoogleMap(
             onMapCreated: _onMapCreated,
             initialCameraPosition: CameraPosition(
-              target: const LatLng(44.787197, 20.457273),
-              zoom: 7,
+              // target: const LatLng(44.787197, 20.457273),
+              target: LatLng(position.latitude, position.longitude),
+              zoom: 12,
             ),
             markers: _markers.values.toSet(),
           ),
