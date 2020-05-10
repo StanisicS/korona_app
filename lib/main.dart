@@ -5,6 +5,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:search_map_place/search_map_place.dart';
+import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -13,12 +15,12 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
-  // var _position;
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  Completer<GoogleMapController> _mapController = Completer();
   BitmapDescriptor pinLocationIcon;
   Position position;
   GoogleMapController mapController;
-
+  Place _selectedPlace;
   Location location = Location();
   PersistentBottomSheetController _controller;
 
@@ -102,7 +104,6 @@ class _MyAppState extends State<MyApp> {
         ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
     await controller.setMapStyle(Utils.mapStyles);
-
 
     setState(() {
       _markers.clear();
@@ -244,21 +245,39 @@ class _MyAppState extends State<MyApp> {
             title: const Text('COVID-19 Ambulante u Srbiji'),
             // backgroundColor: Colors.green[700],
           ),
-          body: GoogleMap(
-            onTap: (latLng) => _controller.close(),
-            onMapCreated: _onMapCreated,
-            initialCameraPosition: CameraPosition(
-              // target: const LatLng(44.787197, 20.457273),
-              target: LatLng(position.latitude, position.longitude),
-              zoom: 12,
+          body: Stack(children: <Widget>[
+            GoogleMap(
+              onTap: (latLng) => _controller.close(),
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: CameraPosition(
+                // target: const LatLng(44.787197, 20.457273),
+                target: LatLng(position.latitude, position.longitude),
+                zoom: 12,
+              ),
+              markers: _markers.values.toSet(),
             ),
-            markers: _markers.values.toSet(),
-          ),
+            Container(
+                alignment: Alignment.topCenter,
+                padding: EdgeInsets.only(top: 20),
+                child: SearchMapPlaceWidget(
+                  apiKey: 'AIzaSyAy6SE1Zuw6erHRIEtWYY3qE9kwTDO80-A',
+                  language: 'sr',
+                  onSelected: (Place place) async {
+                    final geolocation = await place.geolocation;
+
+                    // Will animate the GoogleMap camera, taking us to the selected position with an appropriate zoom
+                    final GoogleMapController controller =
+                        await _mapController.future;
+                    await controller.animateCamera(
+                        CameraUpdate.newLatLng(geolocation.coordinates));
+                    await controller.animateCamera(
+                        CameraUpdate.newLatLngBounds(geolocation.bounds, 0));
+                  }, // YOUR GOOGLE MAPS API KEY
+                ))
+          ]),
         ),
       );
 }
-
-
 
 class Utils {
   static String mapStyles = '''[
