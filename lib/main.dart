@@ -4,9 +4,12 @@ import 'src/locations.dart' as locations;
 import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+<<<<<<< HEAD
 import 'package:url_launcher/url_launcher.dart';
 import 'package:search_map_place/search_map_place.dart';
 import 'dart:async';
+=======
+>>>>>>> parent of 7f3520b... show bottom sheet onTap
 
 void main() => runApp(MyApp());
 
@@ -19,15 +22,17 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   Completer<GoogleMapController> _mapController = Completer();
   BitmapDescriptor pinLocationIcon;
   Position position;
+<<<<<<< HEAD
   GoogleMapController mapController;
   Place _selectedPlace;
+=======
+
+>>>>>>> parent of 7f3520b... show bottom sheet onTap
   Location location = Location();
-  PersistentBottomSheetController _controller;
 
   bool _serviceEnabled;
   PermissionStatus _permissionGranted;
   LocationData _locationData;
-  static GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   Future<void> getLocation() async {
     _serviceEnabled = await location.serviceEnabled();
@@ -106,128 +111,68 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     await controller.setMapStyle(Utils.mapStyles);
 
     setState(() {
+      // position = res;
       _markers.clear();
+      // _markers.addAll(Marker(icon: pinLocationIcon));
 
       for (final ambulante in covidAmbulante.ambulante) {
         final marker = Marker(
-            markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
-            position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
-            icon: pinLocationIcon,
-            infoWindow: InfoWindow(
-                title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
-                snippet: 'Tap here to zoom in',
-                onTap: () {
-                  controller.animateCamera(CameraUpdate.newCameraPosition(
-                      CameraPosition(
-                          target: LatLng(
-                              ambulante.geoLatitude, ambulante.geoLongitude),
-                          zoom: 18)));
-                }),
-            onTap: () {
-              _controller = _scaffoldKey.currentState.showBottomSheet<void>(
-                (BuildContext context) => Container(
-                  color: Colors.transparent,
-                  // height: 350.0,
-                  child: Container(
-                    // alignment: AlignmentDirectional.centerStart,
-                    width: 260,
-                    margin: EdgeInsets.only(
-                      left: 13,
-                      right: 17,
-                      bottom: 17,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
+          markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
+          position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
+          icon: pinLocationIcon,
+          onTap: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (builder) {
+                  return Container(
+                    color: Colors.white,
+                    child: ListView(
                       children: <Widget>[
-                        Center(
-                          child: Container(
-                            child: FlatButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: Container(
-                                width: 150,
-                                height: 5,
-                                margin: EdgeInsets.only(top: 10, bottom: 10),
-                                decoration: BoxDecoration(
-                                  color: Colors.grey[500],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
                         ListTile(
                           leading: Icon(Icons.domain),
                           title: Text(
                             '${ambulante.adresa} ${ambulante.brojZgrade}, ${ambulante.gradOpTina}',
-                            style: TextStyle(
-                                color: Colors.teal[700],
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.black),
                           ),
                         ),
-                        // Divider(height: 5, color: Colors.green[300]),
+                        Divider(height: 5, color: Colors.green[300]),
                         ListTile(
                           leading: Icon(Icons.local_phone),
-                          title: ambulante.kontaktTelefon == null
-                              ? SelectableText('${ambulante.mobilniTelefon}',
-                                  style: TextStyle(
-                                      color: Colors.teal[700],
-                                      fontWeight: FontWeight.bold))
-                              //  ambulante.mobilniTelefon ??
-                              //     Text('${ambulante.kontaktTelefon}')
-                              : SelectableText(
-                                  '${ambulante.kontaktTelefon}\n${ambulante.mobilniTelefon}',
-                                  style: TextStyle(
-                                      color: Colors.teal[700],
-                                      fontWeight: FontWeight.bold),
-                                ),
-                          trailing: Icon(Icons.keyboard_arrow_right),
-                          onTap: () => launch(
-                              'tel:${ambulante.kontaktTelefon ?? ambulante.mobilniTelefon}'),
+                          title: Text(
+                            '${ambulante.kontaktTelefon} ${ambulante.mobilniTelefon}',
+                            style: TextStyle(color: Colors.black),
+                          ),
                         ),
-                        // Divider(height: 5, color: Colors.green[300]),
+                        Divider(height: 5, color: Colors.green[300]),
                         ListTile(
                           leading: Icon(Icons.access_time),
                           title: Text(
-                            'RADNIM DANIMA: \n${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM: ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
-                            style: TextStyle(
-                                color: Colors.teal[700],
-                                fontWeight: FontWeight.bold),
+                            '${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
+                            style: TextStyle(color: Colors.black),
                           ),
                         ),
-                        // Divider(height: 5, color: Colors.green[300]),
+                        Divider(height: 5, color: Colors.green[300]),
                         ListTile(
-                          leading: Icon(Icons.accessible_forward),
-                          title: Text('DOSTUPAN PRILAZ',
-                              style: TextStyle(
-                                  color: Colors.teal[700],
-                                  fontWeight: FontWeight.bold)),
-                          trailing: ambulante.prilazZaInvalide
-                              ? Icon(
-                                  Icons.check_circle,
-                                  color: Colors.green,
-                                )
-                              : Icon(
-                                  Icons.block,
-                                  color: Colors.red,
-                                ),
-                        ),
+                            leading: Icon(Icons.accessible_forward),
+                            title: ambulante.prilazZaInvalide
+                                ? Icon(
+                                    Icons.check_circle,
+                                    color: Colors.green,
+                                  )
+                                : Icon(
+                                    Icons.block,
+                                    color: Colors.red,
+                                  )),
                       ],
                     ),
-                  ),
-                ),
-              );
-            });
+                  );
+                });
+          },
+          // infoWindow: InfoWindow(
+          //   title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
+          //   snippet: ambulante.adresa,
+          // ),
+        );
         _markers[ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi] = marker;
       }
     });
@@ -235,16 +180,12 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.teal,
-          canvasColor: Colors.transparent,
-        ),
         home: Scaffold(
-          key: _scaffoldKey,
           appBar: AppBar(
             title: const Text('COVID-19 Ambulante u Srbiji'),
-            // backgroundColor: Colors.green[700],
+            backgroundColor: Colors.green[700],
           ),
+<<<<<<< HEAD
           body: Stack(children: <Widget>[
             GoogleMap(
               onTap: (latLng) => _controller.close(),
@@ -255,6 +196,14 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 zoom: 12,
               ),
               markers: _markers.values.toSet(),
+=======
+          body: GoogleMap(
+            onMapCreated: _onMapCreated,
+            initialCameraPosition: CameraPosition(
+              // target: const LatLng(44.787197, 20.457273),
+              target: LatLng(position.latitude, position.longitude),
+              zoom: 12,
+>>>>>>> parent of 7f3520b... show bottom sheet onTap
             ),
             Container(
                 alignment: Alignment.topCenter,
