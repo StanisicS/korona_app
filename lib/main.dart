@@ -56,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String _openResult = 'Unknown';
 
   Future<void> openFile() async {
-    final filePath = 'assets/files/covid-19-ambulante.csv';
+    final filePath =
+        'https://github.com/StanisicS/google_maps_int/blob/master/assets/files/covid-19-ambulante2.csv';
 
     final result = await OpenFile.open(filePath);
 
