@@ -28,6 +28,17 @@ void main() {
 }
 
 class GMap extends StatefulWidget {
+  GMap({
+    Key key,
+    this.lat,
+    this.lon,
+  }) : super(key: key);
+
+  final double lat;
+  final double lon;
+
+  // static const cameraPosition = CameraPosition(target: LatLng(lat, lon));
+
   @override
   _GMapState createState() => _GMapState();
 }
@@ -72,22 +83,26 @@ class _GMapState extends State<GMap> {
     GeolocationStatus geolocationStatus =
         await geolocator.checkGeolocationPermissionStatus();
 
-    switch (geolocationStatus) {
-      case GeolocationStatus.denied:
-        showToast('denied');
-        break;
-      case GeolocationStatus.disabled:
-        showToast('disabled');
-        break;
-      case GeolocationStatus.restricted:
-        showToast('restricted');
-        break;
-      case GeolocationStatus.unknown:
-        showToast('unknown');
-        break;
-      case GeolocationStatus.granted:
-        showToast('Access granted');
-        _getCurrentLocation();
+    try {
+      switch (geolocationStatus) {
+        case GeolocationStatus.denied:
+          showToast('denied');
+          break;
+        case GeolocationStatus.disabled:
+          showToast('disabled');
+          break;
+        case GeolocationStatus.restricted:
+          showToast('restricted');
+          break;
+        case GeolocationStatus.unknown:
+          showToast('unknown');
+          break;
+        case GeolocationStatus.granted:
+          showToast('Access granted');
+          _getCurrentLocation();
+      }
+    } on Exception catch (_) {
+      print('There was a problem allowing location access');
     }
   }
 
@@ -120,9 +135,9 @@ class _GMapState extends State<GMap> {
     });
   }
 
-  final SentryClient sentry = SentryClient(
-      dsn:
-          'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
+  // final SentryClient sentry = SentryClient(
+  //     dsn:
+  //         'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
