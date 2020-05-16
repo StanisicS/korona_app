@@ -5,8 +5,27 @@ import 'package:geolocator/geolocator.dart';
 // import 'package:location/location.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:sentry/sentry.dart';
 
-void main() => runApp(GMap());
+void main() {
+  var sentry = SentryClient(
+      dsn:
+          'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
+  FlutterError.onError = (details, {bool forceReport = false}) {
+    try {
+      sentry.captureException(
+        exception: details.exception,
+        stackTrace: details.stack,
+      );
+    } catch (e) {
+      print('Sending report to sentry.io failed: $e');
+    } finally {
+      // Also use Flutter's pretty error logging to the device's console.
+      FlutterError.dumpErrorToConsole(details, forceReport: forceReport);
+    }
+  };
+  runApp(GMap());
+}
 
 class GMap extends StatefulWidget {
   @override
@@ -18,7 +37,9 @@ class _GMapState extends State<GMap> {
   BitmapDescriptor pinLocationIcon;
   Position position;
   GoogleMapController mapController;
-
+  // final SentryClient sentry = SentryClient(
+  //     dsn:
+  //         'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
   // Location location = Location();
   PersistentBottomSheetController _controller;
 
@@ -86,6 +107,11 @@ class _GMapState extends State<GMap> {
     super.initState();
   }
 
+  // final CameraPosition _initialCamera = CameraPosition(
+  //   target: LatLng(geolocator.latitude, position.longitude),
+  //   zoom: 14.0000,
+  // );
+
   void _getCurrentLocation() async {
     Position res = await Geolocator().getCurrentPosition();
     setState(() {
@@ -93,6 +119,10 @@ class _GMapState extends State<GMap> {
       // _child = _mapWidget();
     });
   }
+
+  final SentryClient sentry = SentryClient(
+      dsn:
+          'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
 
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
