@@ -22,7 +22,7 @@ class _GMapState extends State<GMap> {
   // Location location = Location();
   PersistentBottomSheetController _controller;
 
-  bool _serviceEnabled;
+  // bool _serviceEnabled;
   // PermissionStatus _permissionGranted;
   // LocationData _locationData;
   static GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -129,6 +129,7 @@ class _GMapState extends State<GMap> {
                   child: Container(
                     // alignment: AlignmentDirectional.centerStart,
                     width: 260,
+                    padding: EdgeInsets.only(bottom: 10),
                     margin: EdgeInsets.only(
                       left: 13,
                       right: 17,
@@ -137,10 +138,10 @@ class _GMapState extends State<GMap> {
                     decoration: BoxDecoration(
                       color: Colors.white70,
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
                       ),
                     ),
                     child: Column(
@@ -169,7 +170,7 @@ class _GMapState extends State<GMap> {
                           title: Text(
                             '${ambulante.adresa} ${ambulante.brojZgrade}, ${ambulante.gradOpTina}',
                             style: TextStyle(
-                                color: Colors.teal[700],
+                                color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -179,14 +180,14 @@ class _GMapState extends State<GMap> {
                           title: ambulante.kontaktTelefon == null
                               ? SelectableText('${ambulante.mobilniTelefon}',
                                   style: TextStyle(
-                                      color: Colors.teal[700],
+                                      color: Colors.deepPurple,
                                       fontWeight: FontWeight.bold))
                               //  ambulante.mobilniTelefon ??
                               //     Text('${ambulante.kontaktTelefon}')
                               : SelectableText(
                                   '${ambulante.kontaktTelefon}\n${ambulante.mobilniTelefon}',
                                   style: TextStyle(
-                                      color: Colors.teal[700],
+                                      color: Colors.deepPurple,
                                       fontWeight: FontWeight.bold),
                                 ),
                           trailing: Icon(Icons.keyboard_arrow_right),
@@ -199,7 +200,7 @@ class _GMapState extends State<GMap> {
                           title: Text(
                             'RADNIM DANIMA: \n${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM: ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
                             style: TextStyle(
-                                color: Colors.teal[700],
+                                color: Colors.deepPurple,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -208,7 +209,7 @@ class _GMapState extends State<GMap> {
                           leading: Icon(Icons.accessible_forward),
                           title: Text('DOSTUPAN PRILAZ',
                               style: TextStyle(
-                                  color: Colors.teal[700],
+                                  color: Colors.deepPurple,
                                   fontWeight: FontWeight.bold)),
                           trailing: ambulante.prilazZaInvalide
                               ? Icon(
