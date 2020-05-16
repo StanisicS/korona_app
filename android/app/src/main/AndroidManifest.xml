@@ -2,6 +2,7 @@
     package="com.example.google_maps_int">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -11,7 +12,7 @@
     <!-- Permissions options for the `location` group -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="google_maps_int"
+        android:label="c19_srb"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyAy6SE1Zuw6erHRIEtWYY3qE9kwTDO80-A"/>
