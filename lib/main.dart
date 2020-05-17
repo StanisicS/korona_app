@@ -1,12 +1,42 @@
 import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:async';
 import 'gmap.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:geolocator/geolocator.dart';
+import './repository/corona_bloc.dart';
+import './util/package_Info.dart';
+// import 'package:page_transition/page_transition.dart';
+// import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+// import 'package:geolocator/geolocator.dart';
+import './models/global.dart';
+import 'package:getflutter/getflutter.dart';
+
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await init();
+  runMyApp();
+}
+
+Future<void> init() async {
+  CoronaBloc();
+  await initPackageInfo();
+}
+
+void runMyApp() {
+  runZoned<Future<void>>(
+    () async {
+      runApp(MyApp());
+    },
+    onError: (dynamic error, StackTrace stackTrace) async {
+//      await FireBaseManager().logException(
+//        error,
+//        stackTrace: stackTrace,
+//      );
+    },
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -127,6 +157,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   headers: <String, String>{'my_header_key': 'my_header_value'},
                 ),
               ),
+              StreamBuilder<Global>(
+                  stream: CoronaBloc().globalBehaviorSubject$.stream,
+                  builder: (context, snapshot) {
+                    Global global = CoronaBloc().global$;
+                    if (snapshot.hasData || global != null) {
+                      global = snapshot.data ?? global;
+                      return GFListTile(
+                          titleText: 'Total Cases ${global.cases}',
+                          subtitleText:
+                              'Lorem ipsum dolor sit amet, consectetur adipiscing',
+                          icon: Icon(Icons.favorite));
+                    }
+                  })
             ],
           ),
         ),
@@ -142,5 +185,11 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           }),
     );
+  }
+
+  @override
+  void dispose() {
+    CoronaBloc().dispose();
+    super.dispose();
   }
 }
