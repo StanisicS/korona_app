@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-class GlobalInfoDto {
+class Global {
   int cases;
   int deaths;
   int recovered;
@@ -9,7 +9,7 @@ class GlobalInfoDto {
   static DateFormat formatter = DateFormat("MMM d y");
   static DateFormat timeFormatter = DateFormat().add_jm();
 
-  GlobalInfoDto.fromJsonMap(Map<String, dynamic> map)
+  Global.fromJsonMap(Map<String, dynamic> map)
       : cases = map["cases"] ?? 0,
         deaths = map["deaths"] ?? 0,
         recovered = map["recovered"] ?? 0,
