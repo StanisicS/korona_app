@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import 'gmap.dart';
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
@@ -11,8 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Covid-19 Ambulante',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF1D1E33),
+        primaryTextTheme: TextTheme(
+            body1: GoogleFonts.cabin(
+                textStyle: TextStyle(color: Color(0xFF8D8E98)))),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
         canvasColor: Colors.transparent,
       ),
       home: MyHomePage(title: 'Covid-19 Ambulante'),
@@ -66,14 +73,14 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-        color: Colors.white,
+        // color: Colors.white,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Text(
                 'Registar COVID-19 ambulanti na teritoriji Republike Srbije',
-                style: TextStyle(fontSize: 38),
+                style: TextStyle(fontSize: 38, color: Color(0xFF8D8E98)),
               ),
               SizedBox(height: 20),
               //               FlatButton(
