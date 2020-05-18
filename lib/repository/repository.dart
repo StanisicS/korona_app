@@ -20,8 +20,8 @@ class CoronaRepository {
     return Future.value(global);
   }
 
-  Future<List<Serbia>> getSerbia({bool newCall}) async {
-    List<Serbia> serbia = _cacheManager.serbia;
+  Future<Serbia> getSerbia({bool newCall}) async {
+    Serbia serbia = _cacheManager.serbia;
     if (serbia == null || newCall) {
       serbia = await _coronaApi.getSerbia();
       if (Serbia != null) {

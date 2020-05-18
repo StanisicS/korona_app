@@ -9,5 +9,5 @@ class CacheManager {
   CacheManager._internal();
 
   Global global;
-  List<Serbia> serbia;
+  Serbia serbia;
 }

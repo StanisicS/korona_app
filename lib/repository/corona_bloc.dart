@@ -34,8 +34,7 @@ class CoronaBloc {
   }
 
   Future<void> getSerbia({bool newCall}) async {
-    final List<Serbia> serbia =
-        await _coronaRepository.getSerbia(newCall: newCall);
+    final Serbia serbia = await _coronaRepository.getSerbia(newCall: newCall);
     if (serbia != null) {
       CoronaBloc().serbiaBehaviorSubject$.add(serbia);
     }
@@ -47,18 +46,18 @@ class CoronaBloc {
 
   Global get global$ => _cacheManager.global;
 
-  List<Serbia> get serbia$ => _cacheManager.serbia;
+  Serbia get serbia$ => _cacheManager.serbia;
 
   BehaviorSubject<Global> get globalBehaviorSubject$ =>
       _stateManager.globalBehaviorSubject;
 
-  BehaviorSubject<List<Serbia>> get serbiaBehaviorSubject$ =>
+  BehaviorSubject<Serbia> get serbiaBehaviorSubject$ =>
       _stateManager.serbiaBehaviorSubject;
 }
 
 class _StateManager {
   BehaviorSubject<Global> globalBehaviorSubject = BehaviorSubject();
-  BehaviorSubject<List<Serbia>> serbiaBehaviorSubject = BehaviorSubject();
+  BehaviorSubject<Serbia> serbiaBehaviorSubject = BehaviorSubject();
 
   void dispose() {
     logger.info("dispose _StateManager streams");

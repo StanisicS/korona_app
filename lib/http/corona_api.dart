@@ -33,7 +33,7 @@ class CoronaApi {
     return null;
   }
 
-  Future<List<Serbia>> getSerbia() async {
+  Future<Serbia> getSerbia() async {
     try {
       final Uri uri = Uri.https(
         heroku_2_base_url,
@@ -45,10 +45,9 @@ class CoronaApi {
       );
 
       if (response.statusCode == HttpStatus.ok) {
-        return (json.decode(response.body) as List<dynamic>)
-            .map((dynamic res) =>
-                Serbia.fromJsonMap(res as Map<String, dynamic>))
-            .toList();
+        return Serbia.fromJsonMap(
+          json.decode(response.body) as Map<String, dynamic>,
+        );
       }
       CoronaBloc().serbiaBehaviorSubject$.addError(response.statusCode);
     } catch (e, s) {
