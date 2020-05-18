@@ -11,7 +11,7 @@ import './util/package_Info.dart';
 // import 'package:provider/provider.dart';
 
 // import 'package:geolocator/geolocator.dart';
-import './models/global.dart';
+import './models/serbia.dart';
 import './util/kolorz.dart';
 import 'package:getflutter/getflutter.dart';
 
@@ -47,9 +47,11 @@ class MyApp extends StatelessWidget {
       title: 'Covid-19 Ambulante',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: kPrimary,
+        primaryColor: kPrimaryDark,
         scaffoldBackgroundColor: kBackground,
         canvasColor: Colors.transparent,
+        textTheme:
+            GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
       ),
       home: MyHomePage(title: 'Covid-19 Ambulante'),
     );
@@ -159,41 +161,75 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                 ),
-                StreamBuilder<Global>(
-                    stream: CoronaBloc().globalBehaviorSubject$.stream,
+                StreamBuilder<Serbia>(
+                    stream: CoronaBloc().serbiaBehaviorSubject$.stream,
                     builder: (context, snapshot) {
-                      Global global = CoronaBloc().global$;
-                      if (snapshot.hasData || global != null) {
-                        global = snapshot.data ?? global;
+                      Serbia serbia = CoronaBloc().serbia$;
+                      if (snapshot.hasData || serbia != null) {
+                        serbia = snapshot.data ?? serbia;
                       }
                       String dateText = "";
-                      if (global != null && global.updatedDate != null) {
+                      if (serbia != null && serbia.updatedDate != null) {
                         dateText =
-                            global.updatedDate + " " + global.updatedTime;
+                            serbia.updatedDate + " " + serbia.updatedTime;
                       }
                       return GFListTile(
-                          title: Center(
-                            child: Text('UKUPAN BROJ OBOLELIH\n${global.cases}',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.cabin(
-                                    color: kText, fontSize: 16)),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 0),
+                        margin:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 0),
+                        color: kPrimaryDark,
+                        title: Center(
+                          // child: Text('UKUPAN BROJ OBOLELIH\n${serbia.cases}',
+                          //     textAlign: TextAlign.center,
+                          //     style: TextStyle(color: kText, fontSize: 18)),
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              style: DefaultTextStyle.of(context).style,
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: 'UKUPAN BROJ OBOLELIH\n',
+                                  style: TextStyle(
+                                    color: kText,
+                                    fontSize: 18,
+                                    wordSpacing: -0.7,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: '${serbia.cases}',
+                                  style: TextStyle(
+                                    color: kYellow,
+                                    fontSize: 20,
+                                    fontFamily: 'Nexa Demo',
+                                    fontWeight: FontWeight.w900,
+                                    height: 2.0,
+                                    letterSpacing: 2.3,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          subTitle: Row(
-                            children: [
-                              Text('Source:\nworldometers.info/coronavirus',
-                                  textAlign: TextAlign.left,
-                                  style: GoogleFonts.cabin(
-                                      color: kTextDark, fontSize: 10)),
-                              FittedBox(fit: BoxFit.fitWidth),
-                              if (dateText != "") ...{
-                                Text('Last update:\n$dateText',
-                                    textAlign: TextAlign.right,
-                                    style: GoogleFonts.cabin(
-                                        color: kTextDark, fontSize: 10))
-                              }
-                            ],
-                          ),
-                          icon: Icon(Icons.favorite));
+                        ),
+                        subTitle: Row(
+                          children: [
+                            Text(
+                              'Source:\nworldometers.info/coronavirus',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(color: kTextDark, fontSize: 10),
+                            ),
+                            Expanded(child: SizedBox()),
+                            if (dateText != "") ...{
+                              Text(
+                                'Last update:\n$dateText',
+                                textAlign: TextAlign.end,
+                                style:
+                                    TextStyle(color: kTextDark, fontSize: 10),
+                              ),
+                            },
+                          ],
+                        ),
+                      );
                     })
               ],
             ),
@@ -220,18 +256,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// StreamBuilder<global>(
-//                   stream: CoronaBloc().serbiaBehaviorSubject$.stream,
-//                   builder: (context, snapshot) {
-//                     global global = CoronaBloc().global$;
-//                     if (snapshot.hasData || global != null) {
-//                       global = snapshot.data ?? global;
-//                     }
-//                     String dateText = "";
-//                     if (global != null && global.updatedDate != null) {
-//                       dateText = global.updatedDate + " " + global.updatedTime;
-//                     }
-//                     return GFListTile(
+// StreamBuilder<Global>(
+//                     stream: CoronaBloc().globalBehaviorSubject$.stream,
+//                     builder: (context, snapshot) {
+//                       Global global = CoronaBloc().global$;
+//                       if (snapshot.hasData || global != null) {
+//                         global = snapshot.data ?? global;
+//                       }
+//                       String dateText = "";
+//                       if (global != null && global.updatedDate != null) {
+//                         dateText =
+//                             global.updatedDate + " " + global.updatedTime;
+//                       }
+//                       return GFListTile(
 //                         title: Center(
 //                           child: Text('UKUPAN BROJ OBOLELIH\n${global.cases}',
 //                               textAlign: TextAlign.center,
@@ -241,17 +278,17 @@ class _MyHomePageState extends State<MyHomePage> {
 //                         subTitle: Row(
 //                           children: [
 //                             Text('Source:\nworldometers.info/coronavirus',
-//                                 textAlign: TextAlign.left,
+//                                 textAlign: TextAlign.start,
 //                                 style: GoogleFonts.cabin(
 //                                     color: kTextDark, fontSize: 10)),
-//                             Expanded(child: null),
+//                             Expanded(child: SizedBox()),
 //                             if (dateText != "") ...{
 //                               Text('Last update:\n$dateText',
-//                                   textAlign: TextAlign.right,
+//                                   textAlign: TextAlign.end,
 //                                   style: GoogleFonts.cabin(
 //                                       color: kTextDark, fontSize: 10))
 //                             }
 //                           ],
 //                         ),
-//                         icon: Icon(Icons.favorite));
-//                   })
+//                       );
+//                     })

@@ -5,4 +5,4 @@ const Map<String, String> headers = {
 };
 
 // heroku rest prop
-const heroku_2_base_url = 'corona.lmao.ninja';
+const heroku_2_base_url = 'corona.lmao.ninja/v2/all/Serbia';

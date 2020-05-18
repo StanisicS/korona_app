@@ -35,12 +35,14 @@ class CoronaApi {
 
   Future<Serbia> getSerbia() async {
     try {
-      final Uri uri = Uri.https(
-        heroku_2_base_url,
-        'v2/countries/Serbia?yesterday=true&allowNull=true',
-      );
+      // final Uri uri = Uri.https(
+      //   heroku_2_base_url,
+      //   'v2/countries/Serbia?yesterday=true',
+      // );
+      final String url =
+          'https://disease.sh/v2/countries/Serbia?yesterday=true';
       final Response response = await http.get(
-        uri,
+        url,
         headers: headers,
       );
 
