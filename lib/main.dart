@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:device_preview/device_preview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'gmap.dart';
@@ -29,7 +30,9 @@ Future<void> init() async {
 void runMyApp() {
   runZoned<Future<void>>(
     () async {
-      runApp(MyApp());
+      runApp(DevicePreview(
+        builder: (context) => MyApp(),
+      ));
     },
     onError: (dynamic error, StackTrace stackTrace) async {
 //      await FireBaseManager().logException(
@@ -44,6 +47,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: DevicePreview.appBuilder,
       title: 'Covid-19 Ambulante',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(

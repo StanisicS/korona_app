@@ -41,6 +41,7 @@ dependencies:
   google_fonts: ^1.1.0
   provider: ^4.1.2
   page_transition: ^1.1.5
+  device_preview: ^0.4.5
 
 dev_dependencies:
   flutter_test:
