@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 // import 'package:device_simulator/device_simulator.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
@@ -38,11 +38,7 @@ void runMyApp() {
   runZoned<Future<void>>(
     () async {
       runApp(
-        DevicePreview(
-            enabled: true,
-            builder: (context) => ResponsiveWrapper(
-                  child: MyApp(),
-                )),
+        MyApp(),
       );
     },
     onError: (dynamic error, StackTrace stackTrace) async {
@@ -58,7 +54,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.of(context).locale,
       builder: (context, widget) => ResponsiveWrapper.builder(widget,
           maxWidth: 1200,
           minWidth: 480,
