@@ -40,8 +40,8 @@
       "menubar.selectionBorder": "#ff6633",
       "menu.border": "#ff6633"
     },
-    "activityBar.background": "#14340A",
-    "titleBar.activeBackground": "#1D490E",
-    "titleBar.activeForeground": "#F6FDF3"
+    "activityBar.background": "#008659",
+    "titleBar.activeBackground": "#00CC6A",
+    "titleBar.activeForeground": "#000000"
   }
 }

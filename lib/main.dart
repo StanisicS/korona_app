@@ -1,5 +1,4 @@
 import 'dart:async';
-// import 'dart:js';
 import 'package:device_preview/device_preview.dart';
 // import 'package:device_simulator/device_simulator.dart';
 import 'package:responsive_screen/responsive_screen.dart';
@@ -19,7 +18,7 @@ import './models/serbia.dart';
 import './utils/kolorz.dart';
 import 'package:getflutter/getflutter.dart';
 import './responsive/responsive_builder.dart';
-// import './utils/router.dart';
+import './utils/router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 Future<void> main(List<String> args) async {
@@ -38,9 +37,13 @@ const bool debugEnableDeviceSimulator = true;
 void runMyApp() {
   runZoned<Future<void>>(
     () async {
-      runApp(DevicePreview(
-        builder: (context) => MyApp(),
-      ));
+      runApp(
+        DevicePreview(
+            enabled: true,
+            builder: (context) => ResponsiveWrapper(
+                  child: MyApp(),
+                )),
+      );
     },
     onError: (dynamic error, StackTrace stackTrace) async {
 //      await FireBaseManager().logException(
@@ -55,40 +58,83 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        builder: (context, widget) => ResponsiveWrapper.builder(widget,
-            maxWidth: 1200,
-            minWidth: 480,
-            defaultScale: true,
-            breakpoints: [
-              ResponsiveBreakpoint.resize(480, name: MOBILE),
-              ResponsiveBreakpoint.autoScale(800, name: TABLET),
-              ResponsiveBreakpoint.resize(1000, name: DESKTOP),
-            ],
-            background: Container(color: Color(0xFFF5F5F5))),
-        title: 'Covid-19 Ambulante',
-        locale: DevicePreview.of(context).locale,
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: kPrimaryDark,
-          accentColor: kSecondary,
-          scaffoldBackgroundColor: kBackground,
-          canvasColor: Colors.transparent,
-          // fontFamily: '${GoogleFonts.sourceCodePro()}'),
-          fontFamily: 'Comfortaa',
-          // theme: ThemeData.dark().copyWith(
-          //   primaryColor: kPrimaryDark,
-          //   scaffoldBackgroundColor: kBackground,
-          //   canvasColor: Colors.transparent,
-          //   textTheme:
-          //       GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
-        ),
-        // home: HomeView(title: 'Covid-19 Ambulante'),
-        home: DevicePreview.appBuilder(
-          (context), HomeView(),
-          // initialRoute: '/',
-          // routes: appRoutes,
-        ));
+      locale: DevicePreview.of(context).locale,
+      builder: (context, widget) => ResponsiveWrapper.builder(widget,
+          maxWidth: 1200,
+          minWidth: 480,
+          defaultScale: true,
+          breakpoints: [
+            ResponsiveBreakpoint.resize(480, name: MOBILE),
+            ResponsiveBreakpoint.autoScale(800, name: TABLET),
+            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          ],
+          background: Container(color: Color(0xFFF5F5F5))),
+      title: 'Covid-19 Ambulante',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: kPrimaryDark,
+        accentColor: kSecondary,
+        scaffoldBackgroundColor: kBackground,
+        canvasColor: Colors.transparent,
+        // fontFamily: '${GoogleFonts.sourceCodePro()}'),
+        fontFamily: 'Comfortaa',
+        // theme: ThemeData.dark().copyWith(
+        //   primaryColor: kPrimaryDark,
+        //   scaffoldBackgroundColor: kBackground,
+        //   canvasColor: Colors.transparent,
+        //   textTheme:
+        //       GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
+      ),
+      // home: HomeView(title: 'Covid-19 Ambulante'),
+      initialRoute: Routes.home,
+      onGenerateRoute: (RouteSettings settings) {
+        return Routes.fadeThrough(settings, (context) {
+          // switch (settings.name) {
+          //   case Routes.home:
+          //     return ListPage();
+          //     break;
+          //   case Routes.post:
+          //     return PostPage();
+          //     break;
+          //   case Routes.style:
+          //     return TypographyPage();
+          //     break;
+          //   default:
+          //     return null;
+          //     break;
+          // }
+          if (settings.name == Routes.home) {
+            return HomeView();
+          }
+        });
+      },
+      // onGenerateRoute: (RouteSettings settings) {
+      //   return Routes.fadeThrough(settings, (context) {
+      //     switch (settings.name) {
+      //       case Routes.home:
+      //         return ListPage();
+      //         break;
+      //       case Routes.post:
+      //         return PostPage();
+      //         break;
+      //       case Routes.style:
+      //         return TypographyPage();
+      //         break;
+      //       default:
+      //         return null;
+      //         break;
+      //     }
+      //   });
+      // },
+      // home: DeviceSimulator(
+      //   brightness: Brightness.dark,
+      //   enable: debugEnableDeviceSimulator,
+      //   child: HomeView(),
+      //   // initialRoute: '/',
+      //   // routes: appRoutes,
+      // )
+    );
   }
 }
 
@@ -118,25 +164,6 @@ class _HomeViewState extends State<HomeView> {
       print('There was a problem allowing location access');
     }
   }
-
-//   @override
-// Widget build(BuildContext context) {
-//   var myDrawer = MyDrawer(...);
-//   var myBody = MyBody(...);
-
-//   if (MediaQuery.of(context).size.width >= 768.0) {
-//     return MyTabletLayout(
-//       drawer: myDrawer,
-//       body: myBody,
-//     );
-//   }
-//   else {
-//     return MyPhoneLayout(
-//       drawer: myDrawer,
-//       body: myBody,
-//     );
-//   }
-// }
 
   final url =
       'https://github.com/StanisicS/google_maps_int/blob/master/assets/files/covid-19-ambulanteSRB.csv';
@@ -508,12 +535,12 @@ class _HomeViewState extends State<HomeView> {
       },
     );
   }
-
-  void dispose() {
-    CoronaBloc().dispose();
-    super.dispose();
-  }
 }
+//   void dispose() {
+//     CoronaBloc().dispose();
+//     super.dispose();
+//   }
+// }
 
 // @override
 // Widget build(BuildContext context) {

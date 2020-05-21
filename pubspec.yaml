@@ -49,6 +49,7 @@ dependencies:
   flutter_staggered_animations: ^0.1.2
   responsive_framework: ^0.0.7
   device_simulator: ^0.9.6
+  animations: ^1.0.0+5
 
 dev_dependencies:
   flutter_test:
