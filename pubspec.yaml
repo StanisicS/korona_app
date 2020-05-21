@@ -42,6 +42,13 @@ dependencies:
   provider: ^4.1.2
   page_transition: ^1.1.5
   device_preview: ^0.4.5
+  responsive_screen: ^1.0.0
+  share: ^0.6.4+2
+  share_extend: ^1.1.5
+  liquid_pull_to_refresh: ^2.0.0
+  flutter_staggered_animations: ^0.1.2
+  responsive_framework: ^0.0.7
+  device_simulator: ^0.9.6
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +83,11 @@ flutter:
       fonts:
         - asset: fonts/NexaDemo-Bold.otf
           weight: 700
+        - asset: fonts/NexaTextDemo-Bold.otf
+          weight: 700
+    - family: Comfortaa
+      fonts:
+        - asset: fonts/Comfortaa_Regular.ttf
           # style: italic
   #   - family: Trajan Pro
   #     fonts:

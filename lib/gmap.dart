@@ -289,8 +289,8 @@ class _GMapState extends State<GMap> {
         onTap: (latLng) => _controller.close(),
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
-          // target: const LatLng(44.787197, 20.457273),
-          target: LatLng(position.latitude, position.longitude),
+          target: const LatLng(44.787197, 20.457273),
+          // target: LatLng(position.latitude, position.longitude),
           zoom: 12,
         ),
         markers: _markers.values.toSet(),

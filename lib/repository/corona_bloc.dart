@@ -5,7 +5,7 @@ import '../models/serbia.dart';
 
 import './cache.dart';
 import './repository.dart';
-import '../util/logging.dart';
+import '../utils/logging.dart';
 import 'package:rxdart/rxdart.dart';
 
 class CoronaBloc {

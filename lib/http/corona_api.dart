@@ -7,7 +7,7 @@ import '../models/global.dart';
 import '../models/serbia.dart';
 
 import '../repository/corona_bloc.dart';
-import '../util/logging.dart';
+import '../utils/logging.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
