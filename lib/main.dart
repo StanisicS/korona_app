@@ -1,6 +1,7 @@
 import 'dart:async';
 // import 'package:device_preview/device_preview.dart';
 // import 'package:device_simulator/device_simulator.dart';
+import 'package:google_maps_int/views/gmap_view.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 
 // import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +21,8 @@ import 'package:getflutter/getflutter.dart';
 import './responsive/responsive_builder.dart';
 import './utils/router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
+import 'utils/navigator.dart';
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,28 +85,33 @@ class MyApp extends StatelessWidget {
         //       GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
       ),
       // home: HomeView(title: 'Covid-19 Ambulante'),
-      initialRoute: Routes.home,
-      onGenerateRoute: (RouteSettings settings) {
-        return Routes.fadeThrough(settings, (context) {
-          // switch (settings.name) {
-          //   case Routes.home:
-          //     return ListPage();
-          //     break;
-          //   case Routes.post:
-          //     return PostPage();
-          //     break;
-          //   case Routes.style:
-          //     return TypographyPage();
-          //     break;
-          //   default:
-          //     return null;
-          //     break;
-          // }
-          if (settings.name == Routes.home) {
-            return HomeView();
-          }
-        });
+      initialRoute: Routes.navigator,
+      routes: {
+        Routes.navigator: (context) => AppNavigator(),
+        Routes.home: (context) => HomeView(),
+        Routes.map: (context) => GmapView(),
       },
+      // onGenerateRoute: (RouteSettings settings) {
+      //   return Routes.fadeThrough(settings, (context) {
+      //     // switch (settings.name) {
+      //     //   case Routes.home:
+      //     //     return ListPage();
+      //     //     break;
+      //     //   case Routes.post:
+      //     //     return PostPage();
+      //     //     break;
+      //     //   case Routes.style:
+      //     //     return TypographyPage();
+      //     //     break;
+      //     //   default:
+      //     //     return null;
+      //     //     break;
+      //     // }
+      //     if (settings.name == Routes.home) {
+      //       return HomeView();
+      //     }
+      //   });
+      // },
       // onGenerateRoute: (RouteSettings settings) {
       //   return Routes.fadeThrough(settings, (context) {
       //     switch (settings.name) {
