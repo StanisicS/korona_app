@@ -4,6 +4,8 @@ import 'package:google_maps_int/models/serbia.dart';
 import 'package:google_maps_int/repository/corona_bloc.dart';
 import 'package:google_maps_int/responsive/responsive_builder.dart';
 import 'package:google_maps_int/utils/kolorz.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
 // import 'package:google_maps_int/utils/package_Info.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import '../utils/margin.dart';
@@ -22,6 +24,42 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int selectedIndex = 0;
+
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+
+  Widget buildPageView() {
+    return PageView(
+      controller: pageController,
+      onPageChanged: (index) {
+        pageChanged(index);
+      },
+      children: <Widget>[
+        HomeView(),
+        // NewsPage(),
+        // InformationScreen(),
+        // SettingsPage(),
+      ],
+    );
+  }
+
+  void pageChanged(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  void bottomTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+      pageController.animateToPage(index,
+          duration: Duration(milliseconds: 500), curve: Curves.ease);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // super.build(context);
@@ -376,6 +414,52 @@ class _HomeViewState extends State<HomeView> {
                   ],
                 );
               },
+            ),
+          ),
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
+            ]),
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.all(10).add(EdgeInsets.only(top: 5)),
+                child: GNav(
+                    gap: 10,
+                    activeColor: Colors.white,
+                    color: Colors.grey[400],
+                    iconSize: 24,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    duration: Duration(milliseconds: 800),
+                    tabBackgroundColor: Colors.grey[800],
+                    tabs: [
+                      GButton(
+                        icon: LineIcons.home,
+                        text: 'Home',
+                        backgroundColor: Colors.red,
+                      ),
+                      GButton(
+                        icon: LineIcons.newspaper_o,
+                        text: 'News',
+                        backgroundColor: Colors.cyan,
+                      ),
+                      GButton(
+                        icon: LineIcons.list_ul,
+                        text: 'Guides',
+                        backgroundColor: Colors.blue,
+                      ),
+                      GButton(
+                        icon: LineIcons.cog,
+                        text: 'Settings',
+                        backgroundColor: Colors.green,
+                      ),
+                    ],
+                    selectedIndex: selectedIndex,
+                    onTabChange: (index) {
+                      setState(() {
+                        pageController.jumpToPage(index);
+                      });
+                    }),
+              ),
             ),
           ),
         );

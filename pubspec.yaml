@@ -50,6 +50,8 @@ dependencies:
   responsive_framework: ^0.0.7
   device_simulator: ^0.9.6
   animations: ^1.0.0+5
+  google_nav_bar: ^2.2.0
+  line_icons: ^0.2.0
 
 dev_dependencies:
   flutter_test:

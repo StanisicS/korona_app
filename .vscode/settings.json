@@ -43,5 +43,6 @@
     "activityBar.background": "#008659",
     "titleBar.activeBackground": "#00CC6A",
     "titleBar.activeForeground": "#000000"
-  }
+  },
+  "dart.flutterCreateOrganization": "dev.evansit"
 }
