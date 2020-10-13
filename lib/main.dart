@@ -9,6 +9,7 @@ import 'utils/package_Info.dart';
 import 'utils/kolorz.dart';
 import 'utils/router.dart';
 
+import 'package:catcher/catcher.dart';
 // import 'package:device_preview/device_preview.dart';
 // import 'package:device_simulator/device_simulator.dart';
 // import 'package:responsive_screen/responsive_screen.dart';
@@ -29,9 +30,27 @@ import 'utils/router.dart';
 //   runMyApp();
 // }
 
-void main() {
-  runApp(MyApp());
+main() {
+  //debug configuration
+  CatcherOptions debugOptions =
+      CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
+
+  //release configuration
+  CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
+    EmailManualHandler(["stevan.stanisic@outlook.com"])
+  ]);
+
+
+  //MyApp is root widget
+  Catcher(MyApp(),
+      debugConfig: debugOptions,
+      releaseConfig: releaseOptions
+  );
 }
+
+// void main() {
+//   runApp(MyApp());
+// }
 
 Future<void> init() async {
   CoronaBloc();
@@ -40,21 +59,23 @@ Future<void> init() async {
 
 // const bool debugEnableDeviceSimulator = true;
 
-void runMyApp() {
-  runZoned<Future<void>>(
-    () async {
-      runApp(
-        MyApp(),
-      );
-    },
-    onError: (dynamic error, StackTrace stackTrace) async {
-//      await FireBaseManager().logException(
-//        error,
-//        stackTrace: stackTrace,
-//      );
-    },
-  );
-}
+// void runMyApp() {
+//   runZoned<Future<void>>(
+//     () async {
+//       runApp(
+//         MyApp(),
+//       );
+//     },
+//     onError: (dynamic error, StackTrace stackTrace) async {
+// //      await FireBaseManager().logException(
+// //        error,
+// //        stackTrace: stackTrace,
+// //      );
+//     },
+//   );
+// }
+
+
 
 class MyApp extends StatelessWidget {
   @override

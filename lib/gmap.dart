@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
 import 'package:geolocator/geolocator.dart';
-// import 'package:location/location.dart';
+import 'package:location/location.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:sentry/sentry.dart';
@@ -30,12 +30,12 @@ void main() {
 class GMap extends StatefulWidget {
   GMap({
     Key key,
-    this.lat,
-    this.lon,
+    this.latitude,
+    this.longitude,
   }) : super(key: key);
 
-  final double lat;
-  final double lon;
+  final double latitude;
+  final double longitude;
 
   // static const cameraPosition = CameraPosition(target: LatLng(lat, lon));
 
@@ -59,62 +59,76 @@ class _GMapState extends State<GMap> {
   // LocationData _locationData;
   static GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  Future<void> getLocation() async {
-    // _serviceEnabled = await location.serviceEnabled();
-    // if (!_serviceEnabled) {
-    //   _serviceEnabled = await location.requestService();
-    //   if (!_serviceEnabled) {
-    //     return;
-    //   }
-    // }
+  // Future<void> getLocation() async {
+  //   _serviceEnabled = await location.serviceEnabled();
+  //   if (!_serviceEnabled) {
+  //     _serviceEnabled = await location.requestService();
+  //     if (!_serviceEnabled) {
+  //       return;
+  //     }
+  //   }
 
-    // _permissionGranted = await location.hasPermission();
-    // if (_permissionGranted == PermissionStatus.denied) {
-    //   _permissionGranted = await location.requestPermission();
-    //   if (_permissionGranted != PermissionStatus.granted) {
-    //     return;
-    //   }
-    // }
+  //   _permissionGranted = await location.hasPermission();
+  //   if (_permissionGranted == PermissionStatus.denied) {
+  //     _permissionGranted = await location.requestPermission();
+  //     if (_permissionGranted != PermissionStatus.granted) {
+  //       return;
+  //     }
+  //   }
 
-    // _locationData = await location.getLocation();
+  //   _locationData = await location.getLocation();
 
-    var geolocator = Geolocator();
+  //   var geolocator = Geolocator();
 
-    GeolocationStatus geolocationStatus =
-        await geolocator.checkGeolocationPermissionStatus();
+  //   GeolocationStatus geolocationStatus =
+  //       await geolocator.checkGeolocationPermissionStatus();
 
+  //   try {
+  //     switch (geolocationStatus) {
+  //       case GeolocationStatus.denied:
+  //         showToast('denied');
+  //         break;
+  //       case GeolocationStatus.disabled:
+  //         showToast('disabled');
+  //         break;
+  //       case GeolocationStatus.restricted:
+  //         showToast('restricted');
+  //         break;
+  //       case GeolocationStatus.unknown:
+  //         showToast('unknown');
+  //         break;
+  //       case GeolocationStatus.granted:
+  //         showToast('Access granted');
+  //         _getCurrentLocation();
+  //     }
+  //   } on Exception catch (_) {
+  //     print('There was a problem allowing location access');
+  //   }
+  // }
+
+  // void showToast(message) {
+  //   Fluttertoast.showToast(
+  //       msg: message,
+  //       toastLength: Toast.LENGTH_SHORT,
+  //       gravity: ToastGravity.BOTTOM,
+  //       backgroundColor: Colors.red,
+  //       textColor: Colors.white,
+  //       fontSize: 16.0);
+  // }
+
+    Future getLocation() async {
     try {
-      switch (geolocationStatus) {
-        case GeolocationStatus.denied:
-          showToast('denied');
-          break;
-        case GeolocationStatus.disabled:
-          showToast('disabled');
-          break;
-        case GeolocationStatus.restricted:
-          showToast('restricted');
-          break;
-        case GeolocationStatus.unknown:
-          showToast('unknown');
-          break;
-        case GeolocationStatus.granted:
-          showToast('Access granted');
-          _getCurrentLocation();
-      }
-    } on Exception catch (_) {
-      print('There was a problem allowing location access');
+      var userLocation = await Location().getLocation();
+      setState(() {
+        longitude = userLocation.longitude;
+        latitude = userLocation.latitude;
+      });
+    } on Exception catch (e) {
+      print('Could not get location: ${e.toString()}');
     }
   }
-
-  void showToast(message) {
-    Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0);
-  }
+  double latitude;
+  double longitude;
 
   @override
   void initState() {
@@ -127,13 +141,15 @@ class _GMapState extends State<GMap> {
   //   zoom: 14.0000,
   // );
 
-  void _getCurrentLocation() async {
-    Position res = await Geolocator().getCurrentPosition();
-    setState(() {
-      position = res;
-      // _child = _mapWidget();
-    });
-  }
+
+
+  // void _getCurrentLocation() async {
+  //   Position res = await Geolocator().getCurrentPosition();
+  //   setState(() {
+  //     position = res;
+  //     // _child = _mapWidget();
+  //   });
+  // }
 
   // final SentryClient sentry = SentryClient(
   //     dsn:
@@ -289,8 +305,8 @@ class _GMapState extends State<GMap> {
         onTap: (latLng) => _controller.close(),
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
-          target: const LatLng(44.787197, 20.457273),
-          // target: LatLng(position.latitude, position.longitude),
+          // target: const LatLng(44.787197, 20.457273),
+          target: LatLng(latitude, longitude),
           zoom: 12,
         ),
         markers: _markers.values.toSet(),
