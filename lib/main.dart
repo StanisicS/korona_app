@@ -30,27 +30,27 @@ import 'package:catcher/catcher.dart';
 //   runMyApp();
 // }
 
-main() {
-  //debug configuration
-  CatcherOptions debugOptions =
-      CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
+// main() {
+//   //debug configuration
+//   CatcherOptions debugOptions =
+//       CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
 
-  //release configuration
-  CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
-    EmailManualHandler(["stevan.stanisic@outlook.com"])
-  ]);
+//   //release configuration
+//   CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
+//     EmailManualHandler(["stevan.stanisic@outlook.com"])
+//   ]);
 
-
-  //MyApp is root widget
-  Catcher(MyApp(),
-      debugConfig: debugOptions,
-      releaseConfig: releaseOptions
-  );
-}
-
-// void main() {
-//   runApp(MyApp());
+//   //MyApp is root widget
+//   Catcher(MyApp(),
+//       debugConfig: debugOptions,
+//       releaseConfig: releaseOptions
+//   );
 // }
+
+void main() {
+  ErrorWidget.builder = (FlutterErrorDetails details) => Container();
+  runApp(MyApp());
+}
 
 Future<void> init() async {
   CoronaBloc();
@@ -74,8 +74,6 @@ Future<void> init() async {
 //     },
 //   );
 // }
-
-
 
 class MyApp extends StatelessWidget {
   @override
