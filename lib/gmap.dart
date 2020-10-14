@@ -1,3 +1,5 @@
+import 'package:catcher/catcher.dart';
+import 'package:catcher/core/catcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'src/locations.dart' as locations;
@@ -7,24 +9,18 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:sentry/sentry.dart';
 
-void main() {
-  var sentry = SentryClient(
-      dsn:
-          'https://e38392f9518d417d9bc23aa869b87c80@o393596.ingest.sentry.io/5242919');
-  FlutterError.onError = (details, {bool forceReport = false}) {
-    try {
-      sentry.captureException(
-        exception: details.exception,
-        stackTrace: details.stack,
-      );
-    } catch (e) {
-      print('Sending report to sentry.io failed: $e');
-    } finally {
-      // Also use Flutter's pretty error logging to the device's console.
-      FlutterError.dumpErrorToConsole(details, forceReport: forceReport);
-    }
-  };
-  runApp(GMap());
+main() {
+  //debug configuration
+  CatcherOptions debugOptions =
+      CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
+
+  //release configuration
+  CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
+    EmailManualHandler(["stevan.stanisic@outlook.com"])
+  ]);
+
+  //MyApp is root widget
+  Catcher(GMap(), debugConfig: debugOptions, releaseConfig: releaseOptions);
 }
 
 class GMap extends StatefulWidget {
@@ -116,17 +112,14 @@ class _GMapState extends State<GMap> {
   //       fontSize: 16.0);
   // }
 
-    Future getLocation() async {
-    try {
-      var userLocation = await Location().getLocation();
-      setState(() {
-        longitude = userLocation.longitude;
-        latitude = userLocation.latitude;
-      });
-    } on Exception catch (e) {
-      print('Could not get location: ${e.toString()}');
-    }
+  Future getLocation() async {
+    var userLocation = await Location().getLocation();
+    setState(() {
+      longitude = userLocation.longitude;
+      latitude = userLocation.latitude;
+    });
   }
+
   double latitude;
   double longitude;
 
@@ -140,8 +133,6 @@ class _GMapState extends State<GMap> {
   //   target: LatLng(geolocator.latitude, position.longitude),
   //   zoom: 14.0000,
   // );
-
-
 
   // void _getCurrentLocation() async {
   //   Position res = await Geolocator().getCurrentPosition();
