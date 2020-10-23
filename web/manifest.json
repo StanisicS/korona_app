@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
     "name": "c19_app_srb",
     "short_name": "c19_app_srb",
     "start_url": ".",
     "display": "standalone",
+=======
+    "name": "google_maps_int",
+    "short_name": "google_maps_int",
+    "start_url": ".",
+    "display": "minimal-ui",
+>>>>>>> old/master
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
