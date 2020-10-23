@@ -1,31 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.example.c19_app_srb">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-=======
-    package="com.example.google_maps_int">
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
->>>>>>> old/master
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
-<<<<<<< HEAD
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="c19_app_srb"
-=======
-    <!-- Permissions options for the `location` group -->
-    <application
-        android:name="io.flutter.app.FlutterApplication"
-        android:label="c19_srb"
->>>>>>> old/master
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyAy6SE1Zuw6erHRIEtWYY3qE9kwTDO80-A"/>
