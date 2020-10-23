@@ -22,16 +22,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0+5"
-<<<<<<< HEAD
-=======
-  archive:
-    dependency: transitive
-    description:
-      name: archive
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.13"
->>>>>>> old/master
   args:
     dependency: transitive
     description:
@@ -45,11 +35,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "2.4.2"
-=======
-    version: "2.4.1"
->>>>>>> old/master
   boolean_selector:
     dependency: transitive
     description:
@@ -113,7 +99,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.1.0"
-<<<<<<< HEAD
   catcher:
     dependency: "direct main"
     description:
@@ -128,8 +113,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-=======
->>>>>>> old/master
   charcode:
     dependency: transitive
     description:
@@ -144,7 +127,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-<<<<<<< HEAD
   clock:
     dependency: transitive
     description:
@@ -152,30 +134,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-=======
->>>>>>> old/master
   code_builder:
     dependency: transitive
     description:
       name: code_builder
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "3.3.0"
-=======
-    version: "3.2.1"
->>>>>>> old/master
   collection:
     dependency: transitive
     description:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.14.13"
-=======
-    version: "1.14.12"
->>>>>>> old/master
   convert:
     dependency: transitive
     description:
@@ -189,11 +161,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "2.1.5"
-=======
-    version: "2.1.4"
->>>>>>> old/master
   csslib:
     dependency: transitive
     description:
@@ -222,7 +190,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.6"
-<<<<<<< HEAD
   device_info:
     dependency: transitive
     description:
@@ -237,8 +204,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-=======
->>>>>>> old/master
   device_preview:
     dependency: "direct main"
     description:
@@ -253,7 +218,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6"
-<<<<<<< HEAD
   dio:
     dependency: transitive
     description:
@@ -261,15 +225,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.10"
-=======
->>>>>>> old/master
   equatable:
     dependency: transitive
     description:
       name: equatable
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.2.0"
   fake_async:
     dependency: transitive
@@ -278,9 +239,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
-=======
-    version: "1.1.1"
->>>>>>> old/master
   fixnum:
     dependency: transitive
     description:
@@ -288,7 +246,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.11"
-<<<<<<< HEAD
   flinq:
     dependency: transitive
     description:
@@ -296,14 +253,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
-=======
->>>>>>> old/master
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
   flutter_google_maps:
     dependency: "direct main"
     description:
@@ -318,19 +272,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.1"
-=======
->>>>>>> old/master
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
       name: flutter_plugin_android_lifecycle
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.0.8"
-=======
-    version: "1.0.7"
->>>>>>> old/master
   flutter_staggered_animations:
     dependency: "direct main"
     description:
@@ -349,20 +297,12 @@ packages:
     source: sdk
     version: "0.0.0"
   fluttertoast:
-<<<<<<< HEAD
     dependency: "direct overridden"
-=======
-    dependency: "direct main"
->>>>>>> old/master
     description:
       name: fluttertoast
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "7.1.1"
-=======
-    version: "4.0.1"
->>>>>>> old/master
   font_awesome_flutter:
     dependency: transitive
     description:
@@ -405,7 +345,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
-<<<<<<< HEAD
   google_directions_api:
     dependency: transitive
     description:
@@ -413,8 +352,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.0"
-=======
->>>>>>> old/master
   google_fonts:
     dependency: "direct main"
     description:
@@ -422,7 +359,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
-<<<<<<< HEAD
   google_maps:
     dependency: transitive
     description:
@@ -430,19 +366,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.4.5"
-=======
->>>>>>> old/master
   google_maps_flutter:
     dependency: "direct main"
     description:
       name: google_maps_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.5.28+1"
-=======
-    version: "0.5.27+3"
->>>>>>> old/master
   google_maps_flutter_platform_interface:
     dependency: transitive
     description:
@@ -457,7 +387,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
-<<<<<<< HEAD
   google_polyline_algorithm:
     dependency: transitive
     description:
@@ -465,8 +394,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-=======
->>>>>>> old/master
   graphs:
     dependency: transitive
     description:
@@ -474,7 +401,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
-<<<<<<< HEAD
   hawk_fab_menu:
     dependency: "direct main"
     description:
@@ -482,8 +408,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.2"
-=======
->>>>>>> old/master
   html:
     dependency: transitive
     description:
@@ -512,16 +436,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.4"
-<<<<<<< HEAD
-=======
-  image:
-    dependency: transitive
-    description:
-      name: image
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.12"
->>>>>>> old/master
   intl:
     dependency: "direct main"
     description:
@@ -543,7 +457,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.1+1"
-<<<<<<< HEAD
   js_wrapping:
     dependency: transitive
     description:
@@ -551,8 +464,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.0"
-=======
->>>>>>> old/master
   json_annotation:
     dependency: transitive
     description:
@@ -616,7 +527,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.11.4"
-<<<<<<< HEAD
   mailer:
     dependency: transitive
     description:
@@ -624,19 +534,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.1"
-=======
->>>>>>> old/master
   matcher:
     dependency: transitive
     description:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.12.8"
-=======
-    version: "0.12.6"
->>>>>>> old/master
   meta:
     dependency: transitive
     description:
@@ -699,33 +603,21 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.7.0"
-=======
-    version: "1.6.4"
->>>>>>> old/master
   path_provider:
     dependency: transitive
     description:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.6.9"
-=======
-    version: "1.6.8"
->>>>>>> old/master
   path_provider_macos:
     dependency: transitive
     description:
       name: path_provider_macos
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.0.4+3"
-=======
-    version: "0.0.4+2"
->>>>>>> old/master
   path_provider_platform_interface:
     dependency: transitive
     description:
@@ -740,7 +632,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.0"
-<<<<<<< HEAD
   platform:
     dependency: transitive
     description:
@@ -755,22 +646,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.0"
-=======
-  petitparser:
-    dependency: transitive
-    description:
-      name: petitparser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.4.0"
-  platform:
-    dependency: transitive
-    description:
-      name: platform
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.1"
->>>>>>> old/master
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -847,11 +722,7 @@ packages:
       name: share
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.6.4+3"
-=======
-    version: "0.6.4+2"
->>>>>>> old/master
   share_extend:
     dependency: "direct main"
     description:
@@ -865,22 +736,14 @@ packages:
       name: shared_preferences
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.5.7+3"
-=======
-    version: "0.5.7+2"
->>>>>>> old/master
   shared_preferences_macos:
     dependency: transitive
     description:
       name: shared_preferences_macos
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.0.1+9"
-=======
-    version: "0.0.1+8"
->>>>>>> old/master
   shared_preferences_platform_interface:
     dependency: transitive
     description:
@@ -894,11 +757,7 @@ packages:
       name: shared_preferences_web
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.1.2+7"
-=======
-    version: "0.1.2+5"
->>>>>>> old/master
   shelf:
     dependency: transitive
     description:
@@ -932,17 +791,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  splashscreen:
+    dependency: "direct main"
+    description:
+      name: splashscreen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.9.5"
-=======
-    version: "1.9.3"
->>>>>>> old/master
   stream_channel:
     dependency: transitive
     description:
@@ -977,11 +839,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.2.17"
-=======
-    version: "0.2.15"
->>>>>>> old/master
   timing:
     dependency: transitive
     description:
@@ -995,33 +853,21 @@ packages:
       name: typed_data
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.2.0"
-=======
-    version: "1.1.6"
->>>>>>> old/master
   url_launcher:
     dependency: "direct main"
     description:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "5.4.10"
-=======
-    version: "5.4.7"
->>>>>>> old/master
   url_launcher_macos:
     dependency: transitive
     description:
       name: url_launcher_macos
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.0.1+7"
-=======
-    version: "0.0.1+5"
->>>>>>> old/master
   url_launcher_platform_interface:
     dependency: transitive
     description:
@@ -1035,11 +881,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "0.1.1+6"
-=======
-    version: "0.1.1+5"
->>>>>>> old/master
   usage:
     dependency: transitive
     description:
@@ -1047,7 +889,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.4.1"
-<<<<<<< HEAD
   uuid:
     dependency: transitive
     description:
@@ -1055,8 +896,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.2"
-=======
->>>>>>> old/master
   vector_math:
     dependency: transitive
     description:
@@ -1078,16 +917,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
-<<<<<<< HEAD
-=======
-  xml:
-    dependency: transitive
-    description:
-      name: xml
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.6.1"
->>>>>>> old/master
   yaml:
     dependency: transitive
     description:
@@ -1096,9 +925,5 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-<<<<<<< HEAD
   dart: ">=2.9.0-14.0.dev <3.0.0"
-=======
-  dart: ">=2.7.0 <3.0.0"
->>>>>>> old/master
   flutter: ">=1.17.0 <2.0.0"
