@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../utils/kolorz.dart';
-import '../utils/margin.dart';
+import '../../utils/kolorz.dart';
+import '../../utils/margin.dart';
 
 class SituationCard extends StatelessWidget {
   final String caseTitle;

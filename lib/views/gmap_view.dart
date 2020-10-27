@@ -1,3 +1,4 @@
+import 'package:c19_app_srb/utils/kolorz.dart';
 import 'package:catcher/catcher.dart';
 import 'package:catcher/core/catcher.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,8 @@ class _GMapViewState extends State<GMapView> {
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
+        ImageConfiguration(devicePixelRatio: 2.5),
+        'assets/images/ambulance-pin.png');
     final covidAmbulante = await locations.getCovidAmbulante();
     await controller.setMapStyle(Utils.mapStyles);
 
@@ -127,7 +129,10 @@ class _GMapViewState extends State<GMapView> {
                           ),
                         ),
                         ListTile(
-                          leading: Icon(Icons.domain),
+                          leading: Icon(
+                            Icons.domain,
+                            color: kYellow,
+                          ),
                           title: Text(
                             '${ambulante.adresa} ${ambulante.brojZgrade}, ${ambulante.gradOpTina}',
                             style: TextStyle(
@@ -136,7 +141,10 @@ class _GMapViewState extends State<GMapView> {
                           ),
                         ),
                         ListTile(
-                          leading: Icon(Icons.local_phone),
+                          leading: Icon(
+                            Icons.local_phone,
+                            color: kYellow,
+                          ),
                           title: ambulante.kontaktTelefon == null
                               ? SelectableText('${ambulante.mobilniTelefon}',
                                   style: TextStyle(
@@ -153,7 +161,10 @@ class _GMapViewState extends State<GMapView> {
                               'tel:${ambulante.kontaktTelefon ?? ambulante.mobilniTelefon}'),
                         ),
                         ListTile(
-                          leading: Icon(Icons.access_time),
+                          leading: Icon(
+                            Icons.access_time,
+                            color: kYellow,
+                          ),
                           title: Text(
                             'RADNIM DANIMA: \n${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM: ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
                             style: TextStyle(
@@ -162,7 +173,10 @@ class _GMapViewState extends State<GMapView> {
                           ),
                         ),
                         ListTile(
-                          leading: Icon(Icons.accessible_forward),
+                          leading: Icon(
+                            Icons.accessible_forward,
+                            color: kYellow,
+                          ),
                           title: Text('DOSTUPAN PRILAZ',
                               style: TextStyle(
                                   color: Colors.deepPurple,

@@ -1,38 +1,9 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/serbia.dart';
 import '../repository/corona_bloc.dart';
 import '../responsive/responsive_builder.dart';
-import '../utils/package_Info.dart';
 import 'package:responsive_screen/responsive_screen.dart';
-import './situation_card.dart';
-
-// Future<void> main(List<String> args) async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await init();
-//   runHomeView();
-// }
-
-// Future<void> init() async {
-//   CoronaBloc();
-//   await initPackageInfo();
-// }
-
-// void runHomeView() {
-//   runZoned<Future<void>>(
-//     () async {
-//       runApp(
-//         HomeView(),
-//       );
-//     },
-//     onError: (dynamic error, StackTrace stackTrace) async {
-// //      await FireBaseManager().logException(
-// //        error,
-// //        stackTrace: stackTrace,
-// //      );
-//     },
-//   );
-// }
+import 'widgets/situation_card_widget.dart';
 
 class HomeView extends StatefulWidget {
   @override

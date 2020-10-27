@@ -11,20 +11,18 @@ import 'views/news_view.dart';
 import 'utils/package_Info.dart';
 import 'utils/kolorz.dart';
 import 'utils/router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: kPrimaryDark, // navigation bar color
-    statusBarColor: Colors.pink, // status bar color
-    statusBarBrightness: Brightness.dark, //status bar brigtness
-    statusBarIconBrightness: Brightness.dark, //status barIcon Brightness
-    systemNavigationBarDividerColor:
-        Colors.greenAccent, //Navigation bar divider color
-    systemNavigationBarIconBrightness: Brightness.light, //navigation bar icon
+    systemNavigationBarColor: kPrimaryDark,
+    statusBarColor: Colors.pink,
+    statusBarBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark,
+    systemNavigationBarDividerColor: Colors.greenAccent,
+    systemNavigationBarIconBrightness: Brightness.light,
   ));
   await init();
   runMyApp();
@@ -45,25 +43,6 @@ void runMyApp() {
   );
 }
 
-// void main() {
-//   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
-//   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-//     systemNavigationBarColor: kPrimaryDark, // navigation bar color
-//     statusBarColor: Colors.pink, // status bar color
-//     statusBarBrightness: Brightness.dark, //status bar brigtness
-//     statusBarIconBrightness: Brightness.dark, //status barIcon Brightness
-//     systemNavigationBarDividerColor:
-//         Colors.greenAccent, //Navigation bar divider color
-//     systemNavigationBarIconBrightness: Brightness.light, //navigation bar icon
-//   ));
-//   runApp(MyApp());
-// }
-
-// Future<void> init() async {
-//   CoronaBloc();
-//   await initPackageInfo();
-// }
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -75,8 +54,8 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        const Locale('en', ''), // English, no country code
-        const Locale('sr', ''), // Hebrew, no country code
+        const Locale('en', ''),
+        const Locale('sr', ''),
       ],
       builder: (context, widget) => ResponsiveWrapper.builder(widget,
           maxWidth: 1200,
