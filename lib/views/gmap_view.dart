@@ -1,171 +1,445 @@
-import 'dart:async';
-
+import 'package:catcher/catcher.dart';
+import 'package:catcher/core/catcher.dart';
 import 'package:flutter/material.dart';
-import '../repository/corona_bloc.dart';
-import '../responsive/responsive_builder.dart';
-import '../utils/kolorz.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../src/locations.dart' as locations;
+import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
-// import 'package:google_maps_int/utils/package_Info.dart';
-import 'package:responsive_screen/responsive_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../gmap.dart';
-import '../main.dart';
-import '../utils/margin.dart';
 
-Future<void> main(List<String> args) async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await init();
-  runGmapView();
+main() {
+  //debug configuration
+  CatcherOptions debugOptions =
+      CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
+
+  //release configuration
+  CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
+    EmailManualHandler(["stevan.stanisic@outlook.com"])
+  ]);
+
+  //MyApp is root widget
+  Catcher(GMapView(), debugConfig: debugOptions, releaseConfig: releaseOptions);
 }
 
-void runGmapView() {
-  runZoned<Future<void>>(
-    () async {
-      runApp(
-        GmapView(),
-      );
-    },
-    onError: (dynamic error, StackTrace stackTrace) async {
-//      await FireBaseManager().logException(
-//        error,
-//        stackTrace: stackTrace,
-//      );
-    },
-  );
-}
+class GMapView extends StatefulWidget {
+  GMapView({
+    Key key,
+    this.latitude,
+    this.longitude,
+  }) : super(key: key);
 
-class GmapView extends StatefulWidget {
-  GmapView({Key key, this.title}) : super(key: key);
-
-  final String title;
+  final double latitude;
+  final double longitude;
 
   @override
-  _GmapViewState createState() => _GmapViewState();
+  _GMapViewState createState() => _GMapViewState();
 }
 
-class _GmapViewState extends State<GmapView> {
-  // Position position;
+class _GMapViewState extends State<GMapView> {
+  BitmapDescriptor pinLocationIcon;
+  Position position;
+  GoogleMapController mapController;
+  PersistentBottomSheetController _controller;
+
+  static GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  Future getLocation() async {
+    var userLocation = await Location().getLocation();
+    setState(() {
+      longitude = userLocation.longitude;
+      latitude = userLocation.latitude;
+    });
+  }
+
+  double latitude;
+  double longitude;
 
   @override
   void initState() {
+    getLocation();
     super.initState();
-    _getLocationPermission();
   }
 
-  void _getLocationPermission() async {
-    var location = new Location();
-    try {
-      location.requestPermission();
-    } on Exception catch (_) {
-      print('There was a problem allowing location access');
-    }
-  }
+  final Map<String, Marker> _markers = {};
+  Future<void> _onMapCreated(GoogleMapController controller) async {
+    final pinLocationIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/ambulance-pin.png');
+    final covidAmbulante = await locations.getCovidAmbulante();
+    await controller.setMapStyle(Utils.mapStyles);
 
-  final url =
-      'https://github.com/StanisicS/google_maps_int/blob/master/assets/files/covid-19-ambulanteSRB.csv';
+    setState(() {
+      _markers.clear();
 
-  // Future<void> getLocation() async {
-  //   Position res = await Geolocator().getCurrentPosition();
-  //   setState(() {
-  //     position = res;
-  //     // _child = _mapWidget();
-  //   });
-  // }
-  @override
-  Widget build(BuildContext context) {
-    // super.build(context);
-
-    final Function wp = Screen(context).wp;
-    final Function hp = Screen(context).hp;
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Covid-19 Tracker Srbija'),
-          ),
-          body: SingleChildScrollView(
-            padding: EdgeInsets.only(top: 20),
-
-            // margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-            child: Center(
-              child: SingleChildScrollView(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                    Text(
-                      'Registar COVID-19 ambulanti na teritoriji Republike Srbije',
-                      style: TextStyle(fontSize: 38, color: Color(0xFF8D8E98)),
+      for (final ambulante in covidAmbulante.ambulante) {
+        final marker = Marker(
+            markerId: MarkerId(ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi),
+            position: LatLng(ambulante.geoLatitude, ambulante.geoLongitude),
+            icon: pinLocationIcon,
+            infoWindow: InfoWindow(
+                title: ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi,
+                snippet: 'Tap here to zoom in',
+                onTap: () {
+                  controller.animateCamera(CameraUpdate.newCameraPosition(
+                      CameraPosition(
+                          target: LatLng(
+                              ambulante.geoLatitude, ambulante.geoLongitude),
+                          zoom: 18)));
+                }),
+            onTap: () {
+              _controller = _scaffoldKey.currentState.showBottomSheet<void>(
+                (BuildContext context) => Container(
+                  color: Colors.transparent,
+                  child: Container(
+                    width: 260,
+                    padding: EdgeInsets.only(bottom: 10),
+                    margin: EdgeInsets.only(
+                      left: 13,
+                      right: 17,
+                      bottom: 17,
                     ),
-                    SizedBox(height: 20),
-                    //               FlatButton(
-                    //   child: Text('Tap to open file'),
-                    //   onPressed: () {
-                    //     OpenFile.open('assets/covid-19-ambulante.xlsx');
-                    //   },
-                    // ),
-                    // Text('open result: $_openResult\n'),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Dataset source: ',
-                          style: TextStyle(
-                            fontSize: 20,
-                            // fontStyle: FontStyle.italic,
-                            // color: Colors.blueGrey[400],
-                          ),
-                        ),
-                        InkWell(
-                            child: Text(
-                              'data.gov.rs',
-                              style: TextStyle(
-                                  // fontStyle: FontStyle.italic,
-                                  fontSize: 20,
-                                  decoration: TextDecoration.underline,
-                                  color: Colors.blue),
-                            ),
-                            onTap: () => launch(
-                                'https://data.gov.rs/sr/datasets/covid-19-registar-covid-19-ambulanti-na-teritoriji-republike-srbije/')),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-
-                    RaisedButton(
-                      child: Text('Tap to view data table',
-                          style: TextStyle(fontSize: 20)),
-                      onPressed: () => launch(
-                        url,
-                        forceSafariVC: true,
-                        forceWebView: true,
-                        headers: <String, String>{
-                          'my_header_key': 'my_header_value'
-                        },
+                    decoration: BoxDecoration(
+                      color: Colors.white70,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
                       ),
                     ),
-                  ])),
-            ),
-          ),
-          floatingActionButton: FloatingActionButton.extended(
-            tooltip: 'Increment',
-            icon: Icon(Icons.map),
-            label: Text('Show on map'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GMap()),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Center(
+                          child: Container(
+                            child: FlatButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: Container(
+                                width: 150,
+                                height: 5,
+                                margin: EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[500],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.domain),
+                          title: Text(
+                            '${ambulante.adresa} ${ambulante.brojZgrade}, ${ambulante.gradOpTina}',
+                            style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.local_phone),
+                          title: ambulante.kontaktTelefon == null
+                              ? SelectableText('${ambulante.mobilniTelefon}',
+                                  style: TextStyle(
+                                      color: Colors.deepPurple,
+                                      fontWeight: FontWeight.bold))
+                              : SelectableText(
+                                  '${ambulante.kontaktTelefon}\n${ambulante.mobilniTelefon}',
+                                  style: TextStyle(
+                                      color: Colors.deepPurple,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          onTap: () => launch(
+                              'tel:${ambulante.kontaktTelefon ?? ambulante.mobilniTelefon}'),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.access_time),
+                          title: Text(
+                            'RADNIM DANIMA: \n${ambulante.radniDanRadnoVremeOd} - ${ambulante.radniDanRadnoVremeDo}\nVIKENDOM: ${ambulante.vikendRadnoVremeOd} - ${ambulante.vikendRadnoVremeDo}',
+                            style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.accessible_forward),
+                          title: Text('DOSTUPAN PRILAZ',
+                              style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontWeight: FontWeight.bold)),
+                          trailing: ambulante.prilazZaInvalide
+                              ? Icon(
+                                  Icons.check_circle,
+                                  color: Colors.green,
+                                )
+                              : Icon(
+                                  Icons.block,
+                                  color: Colors.red,
+                                ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               );
-            },
-          ),
-        );
-      },
-    );
+            });
+        _markers[ambulante.cOVIDAmbulantaPriZdravstvenojUstanovi] = marker;
+      }
+    });
   }
 
   @override
-  void dispose() {
-    CoronaBloc().dispose();
-    super.dispose();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      key: _scaffoldKey,
+      appBar: AppBar(
+        title: const Text('Covid-19 Ambulante'),
+      ),
+      body: GoogleMap(
+        onTap: (latLng) => _controller.close(),
+        onMapCreated: _onMapCreated,
+        initialCameraPosition: CameraPosition(
+          target: LatLng(latitude, longitude),
+          zoom: 12,
+        ),
+        markers: _markers.values.toSet(),
+      ),
+    );
   }
+}
+
+class Utils {
+  static String mapStyles = '''[
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8ec3b9"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1a3646"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#4b6878"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#64779e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#4b6878"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#334e87"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape.natural",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#283d6a"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#6f9ba5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3C7680"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#304a7d"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#2c6675"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#255763"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#b0d5ce"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#023e58"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#98a5be"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1d2c4d"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#283d6a"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3a4762"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#0e1626"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#4e6d70"
+      }
+    ]
+  }
+]''';
 }

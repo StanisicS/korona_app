@@ -1,9 +1,11 @@
+import 'package:c19_app_srb/views/gmap_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import '../views/home_view.dart';
+import '../views/news_view.dart';
 import '../views/gmap_view.dart';
 import 'kolorz.dart';
 
@@ -14,7 +16,7 @@ class AppNavigator extends StatefulWidget {
 
 class _AppNavigatorState extends State<AppNavigator> {
   int _currentIndex = 0;
-  List<Widget> _pages = [HomeView(), GmapView()];
+  final List<Widget> _pages = [HomeView(), GMapView(), NewsView()];
 
   @override
   Widget build(BuildContext context) {
@@ -80,14 +82,14 @@ class _AppNavigatorState extends State<AppNavigator> {
                   backgroundColor: kSecondaryDark,
                 ),
                 GButton(
-                  icon: LineIcons.newspaper_o,
-                  text: 'News',
+                  icon: LineIcons.map,
+                  text: 'Map',
                   backgroundColor: kSecondaryDark,
                 ),
                 GButton(
-                  icon: LineIcons.list_ul,
-                  text: 'Guides',
-                  backgroundColor: Colors.blue,
+                  icon: LineIcons.newspaper_o,
+                  text: 'News',
+                  backgroundColor: kSecondaryDark,
                 ),
                 GButton(
                   icon: LineIcons.cog,

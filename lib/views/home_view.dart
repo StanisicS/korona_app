@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import '../models/serbia.dart';
 import '../repository/corona_bloc.dart';
@@ -8,36 +7,34 @@ import '../utils/package_Info.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 import './situation_card.dart';
 
-Future<void> main(List<String> args) async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await init();
-  runHomeView();
-}
+// Future<void> main(List<String> args) async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await init();
+//   runHomeView();
+// }
 
-Future<void> init() async {
-  CoronaBloc();
-  await initPackageInfo();
-}
+// Future<void> init() async {
+//   CoronaBloc();
+//   await initPackageInfo();
+// }
 
-void runHomeView() {
-  runZoned<Future<void>>(
-    () async {
-      runApp(
-        HomeView(),
-      );
-    },
-    onError: (dynamic error, StackTrace stackTrace) async {
-//      await FireBaseManager().logException(
-//        error,
-//        stackTrace: stackTrace,
-//      );
-    },
-  );
-}
+// void runHomeView() {
+//   runZoned<Future<void>>(
+//     () async {
+//       runApp(
+//         HomeView(),
+//       );
+//     },
+//     onError: (dynamic error, StackTrace stackTrace) async {
+// //      await FireBaseManager().logException(
+// //        error,
+// //        stackTrace: stackTrace,
+// //      );
+//     },
+//   );
+// }
 
 class HomeView extends StatefulWidget {
-  // final String title;
-
   @override
   _HomeViewState createState() => _HomeViewState();
 }
@@ -45,19 +42,18 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    // super.build(context);
-
     final Function wp = Screen(context).wp;
     final Function hp = Screen(context).hp;
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       return Scaffold(
+        // resizeToAvoidBottomPadding: false,
         appBar: AppBar(
-          title: Text('Covid-19 Tracker Srbija'),
+          title: Text(
+            'Statistički Podaci',
+          ),
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 10),
-
-          // margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: StreamBuilder<Serbia>(
             stream: CoronaBloc().serbiaBehaviorSubject$.stream,
             builder: (context, snapshot) {
@@ -96,10 +92,5 @@ class _HomeViewState extends State<HomeView> {
         ),
       );
     });
-  }
-
-  void dispose() {
-    CoronaBloc().dispose();
-    super.dispose();
   }
 }

@@ -1,55 +1,33 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'utils/navigator.dart';
 
 import 'repository/corona_bloc.dart';
 import 'views/gmap_view.dart';
+import 'views/home_view.dart';
+import 'views/news_view.dart';
 import 'utils/package_Info.dart';
 import 'utils/kolorz.dart';
 import 'utils/router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:catcher/catcher.dart';
-// import 'package:device_preview/device_preview.dart';
-// import 'package:device_simulator/device_simulator.dart';
-// import 'package:responsive_screen/responsive_screen.dart';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:url_launcher/url_launcher.dart';
-// import 'gmap.dart';
-// import 'package:location/location.dart';
-// import 'package:page_transition/page_transition.dart';
-// import 'package:provider/provider.dart';
-// import 'package:geolocator/geolocator.dart';
-// import './models/serbia.dart';
-// import 'package:getflutter/getflutter.dart';
-// import './responsive/responsive_builder.dart';
-
-// Future<void> main(List<String> args) async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await init();
-//   runMyApp();
-// }
-
-// main() {
-//   //debug configuration
-//   CatcherOptions debugOptions =
-//       CatcherOptions(SilentReportMode(), [ConsoleHandler()]);
-
-//   //release configuration
-//   CatcherOptions releaseOptions = CatcherOptions(SilentReportMode(), [
-//     EmailManualHandler(["stevan.stanisic@outlook.com"])
-//   ]);
-
-//   //MyApp is root widget
-//   Catcher(MyApp(),
-//       debugConfig: debugOptions,
-//       releaseConfig: releaseOptions
-//   );
-// }
-
-void main() {
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
-  runApp(MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: kPrimaryDark, // navigation bar color
+    statusBarColor: Colors.pink, // status bar color
+    statusBarBrightness: Brightness.dark, //status bar brigtness
+    statusBarIconBrightness: Brightness.dark, //status barIcon Brightness
+    systemNavigationBarDividerColor:
+        Colors.greenAccent, //Navigation bar divider color
+    systemNavigationBarIconBrightness: Brightness.light, //navigation bar icon
+  ));
+  await init();
+  runMyApp();
 }
 
 Future<void> init() async {
@@ -57,28 +35,49 @@ Future<void> init() async {
   await initPackageInfo();
 }
 
-// const bool debugEnableDeviceSimulator = true;
+void runMyApp() {
+  runZoned<Future<void>>(
+    () async {
+      runApp(
+        MyApp(),
+      );
+    },
+  );
+}
 
-// void runMyApp() {
-//   runZoned<Future<void>>(
-//     () async {
-//       runApp(
-//         MyApp(),
-//       );
-//     },
-//     onError: (dynamic error, StackTrace stackTrace) async {
-// //      await FireBaseManager().logException(
-// //        error,
-// //        stackTrace: stackTrace,
-// //      );
-//     },
-//   );
+// void main() {
+//   ErrorWidget.builder = (FlutterErrorDetails details) => Container();
+//   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+//     systemNavigationBarColor: kPrimaryDark, // navigation bar color
+//     statusBarColor: Colors.pink, // status bar color
+//     statusBarBrightness: Brightness.dark, //status bar brigtness
+//     statusBarIconBrightness: Brightness.dark, //status barIcon Brightness
+//     systemNavigationBarDividerColor:
+//         Colors.greenAccent, //Navigation bar divider color
+//     systemNavigationBarIconBrightness: Brightness.light, //navigation bar icon
+//   ));
+//   runApp(MyApp());
+// }
+
+// Future<void> init() async {
+//   CoronaBloc();
+//   await initPackageInfo();
 // }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        // ... app-specific localization delegate[s] here
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''), // English, no country code
+        const Locale('sr', ''), // Hebrew, no country code
+      ],
       builder: (context, widget) => ResponsiveWrapper.builder(widget,
           maxWidth: 1200,
           minWidth: 480,
@@ -89,7 +88,7 @@ class MyApp extends StatelessWidget {
             ResponsiveBreakpoint.resize(1000, name: DESKTOP),
           ],
           background: Container(color: Color(0xFFF5F5F5))),
-      title: 'Covid-19 Ambulante',
+      // title: title,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -97,73 +96,36 @@ class MyApp extends StatelessWidget {
         accentColor: kSecondary,
         scaffoldBackgroundColor: kBackground,
         canvasColor: Colors.transparent,
-        // fontFamily: '${GoogleFonts.sourceCodePro()}'),
-        fontFamily: 'Nexa Text Demo',
-        // theme: ThemeData.dark().copyWith(
-        //   primaryColor: kPrimaryDark,
-        //   scaffoldBackgroundColor: kBackground,
-        //   canvasColor: Colors.transparent,
-        //   textTheme:
-        //       GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
+        fontFamily: 'Comfortaa',
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Roboto'),
+        ),
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          color: kPrimaryDark,
+          shadowColor: const Color(0xff050814),
+          textTheme: TextTheme(
+            headline6: TextStyle(
+                letterSpacing: 1.6,
+                fontSize: 26.0,
+                fontFamily: 'Comfortaa',
+                color: kTextDark,
+                fontWeight: FontWeight.w600),
+          ),
+        ),
       ),
-      // home: HomeView(title: 'Covid-19 Ambulante'),
       initialRoute: Routes.navigator,
       routes: {
         Routes.navigator: (context) => AppNavigator(),
-        Routes.home: (context) => GmapView(),
-        Routes.map: (context) => GmapView(),
+        Routes.home: (context) => HomeView(),
+        Routes.map: (context) => GMapView(),
+        Routes.news: (context) => NewsView(),
       },
-      // onGenerateRoute: (RouteSettings settings) {
-      //   return Routes.fadeThrough(settings, (context) {
-      // switch (settings.name) {
-      //   case Routes.home:
-      //     return ListPage();
-      //     break;
-      //   case Routes.post:
-      //     return PostPage();
-      //     break;
-      //   case Routes.style:
-      //     return TypographyPage();
-      //     break;
-      //   default:
-      //     return null;
-      //     break;
-      // }
-      //     if (settings.name == Routes.home) {
-      //       return HomeView();
-      //     }
-      //   });
-      // },
-      // onGenerateRoute: (RouteSettings settings) {
-      //   return Routes.fadeThrough(settings, (context) {
-      //     switch (settings.name) {
-      //       case Routes.home:
-      //         return ListPage();
-      //         break;
-      //       case Routes.post:
-      //         return PostPage();
-      //         break;
-      //       case Routes.style:
-      //         return TypographyPage();
-      //         break;
-      //       default:
-      //         return null;
-      //         break;
-      //     }
-      //   });
-      // },
-      // home: DeviceSimulator(
-      //   brightness: Brightness.dark,
-      //   enable: debugEnableDeviceSimulator,
-      //   child: HomeView(),
-      // initialRoute: '/',
-      // routes: appRoutes,
-      // )
     );
   }
 
   void dispose() {
     CoronaBloc().dispose();
-    // super.dispose();
   }
 }

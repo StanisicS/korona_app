@@ -20,9 +20,10 @@ import 'package:animations/animations.dart';
 import 'package:flutter/widgets.dart';
 
 class Routes {
-  static const String navigator = "/";
-  static const String home = "/home";
-  static const String map = "/map";
+  static const String navigator = '/';
+  static const String home = '/home';
+  static const String map = '/map';
+  static const String news = '/news';
   // static const String post = "post";
   // static const String style = "style";
 
