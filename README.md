@@ -1,6 +1,14 @@
-# c19_app_srb
+# korona_srb
 
-A new Flutter project.
+Corona app to track cases and news related to COVID-19 in Serbia (RS) build with Flutter.
+
+## Demo
+Download the `app-release.apk` to try out the alpha version
+
+<br>
+<a href="https://github.com/StanisicS/korona_app/releases/download/v0.1-alpha/app-release.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
+<br>
+
 
 ## Getting Started
 
