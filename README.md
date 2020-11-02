@@ -1,4 +1,4 @@
-# korona_srb
+# c19_app_srb
 
 Corona app to track cases and news related to COVID-19 in Serbia (RS) build with Flutter.
 
