@@ -27,9 +27,12 @@
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
+.vscode/
 .pub-cache/
 .pub/
 /build/
+.gitattributes
+analysis_options.yaml
 
 # Web related
 lib/generated_plugin_registrant.dart

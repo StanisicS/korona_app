@@ -1,6 +1,6 @@
 # c19_app_srb
 
-Corona app to track cases and news related to COVID-19 in Serbia (RS) build with Flutter.
+Corona app to track cases, news and info about all registered COVID-19 ambulances in Serbia (RS), build with Flutter.
 
 ## Demo
 Download the `app-release.apk` to try out the alpha version
