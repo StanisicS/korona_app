@@ -12,7 +12,8 @@ Download the `app-release.apk` to try out the alpha version
 ## 📸 ScreenShots
 
 <br>
-<img src="assets/screenshots/Screenshot_20201102-202141.jpg" width="250">|<img src="assets/screenshots/Screenshot_20201102-202224.jpg" width="250">
+<img src="assets/screenshots/Screenshot_20201102-202141.jpg" width="250">
+<img src="assets/screenshots/Screenshot_20201102-202224.jpg" width="250">
 <img src="assets/screenshots/Screenshot_20201102-202317.jpg" width="250">
 <img src="assets/screenshots/Screenshot_20201102-202354.jpg" width="250">
 <br>
